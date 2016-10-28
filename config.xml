@@ -8,7 +8,7 @@
         Apache Cordova Team
     </author>
     <content src="index.html" />
-   <gap:plugin name="cordova-plugin-whitelist" spec="1" />
+    <plugin name="cordova-plugin-whitelist" spec="1" />
     <gap:plugin name="cordova-plugin-file-transfer" source="pgb"  />
    <gap:plugin name="cordova-plugin-file" source="pgb"  />
 
