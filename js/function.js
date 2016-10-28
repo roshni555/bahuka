@@ -6065,7 +6065,7 @@ else{
   
 }
 
-/*window.setInterval(function () {
+window.setInterval(function () {
     countnoti();
 },  1000);
 
@@ -6093,7 +6093,7 @@ var countnoti = function() {
         }
     });
 }
-*/
+
 
 /*function notificationcount(){
 

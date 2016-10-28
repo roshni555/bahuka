@@ -1197,7 +1197,7 @@ border: 1px solid red !important;
 /*border:1px solid #3D9BE9;
 height: 24px;
 overflow: auto;*/
-text-align: center;	
+text-align: center; 
  float: left;
     margin: 3% 0;
    
@@ -1216,7 +1216,7 @@ margin: 0;
 .imgappend2 {
    
     float: left;
-  	margin: 2% 0px;
+    margin: 2% 0px;
     overflow: auto;
     text-align: center;
     width: 100%;
@@ -2205,14 +2205,14 @@ padding-right: 14px;
 }
  .professercls
  {
- 	margin: 0px;
+    margin: 0px;
  }
  .techer_listpage
  {
 
- 	width:100%;
- 	margin:0 auto;
- 	  text-align: center;
+    width:100%;
+    margin:0 auto;
+      text-align: center;
  }
 .techer_listpage input.StdFinishBtn-pge
 {
@@ -2262,7 +2262,7 @@ width: 50%;
 .view-detail-thrk
 {
 
-	  border: 3px solid rgba(61, 155, 233, 1);
+      border: 3px solid rgba(61, 155, 233, 1);
     border-radius: 10px;
     bottom: 0;
     color: #3d9be9;
@@ -2623,7 +2623,7 @@ float:left;
     float: left;
     font-family: reklamescriptw00-medium,cursive;
     font-size: 34px;
-    margin: 0 0 0 25px;	
+    margin: 0 0 0 25px; 
 }
 
 .teacher-listing-page img {
@@ -3048,7 +3048,7 @@ text-align: center;
 /* box-shadow */
 
 .test-images > img{
-	width:95%;
+    width:95%;
     border: 6px solid #ffffff;
     box-shadow: 0 0 5px -1px #000000;
 }
@@ -3497,10 +3497,10 @@ button {
 .possible-nme-best {
     float: right;
     width: 49%;
-	 
+     
 }
 .possible-nme-best >p{
-	 color: #207ea9;
+     color: #207ea9;
      font-size: 20px;
 }
 .possible-nme-best input{
@@ -4774,16 +4774,20 @@ border-bottom: 0px solid #000;
 }
 
 #student-class-pge .sin_pfl_dtl .bottom-colmk {
-    margin: -11% auto 0;
+    margin: -11% auto 0 !important;
 }
 #student-class-group-pge .bottom-colmk {
-    margin-top: -2%;
+    margin-top: -2% !important;
 }
 .member-liked .right {
     float: right;
     text-align: right;
     width: 53%;
 }
+
+
+
+
 }
 
 @media only screen and (max-width: 500px) {
