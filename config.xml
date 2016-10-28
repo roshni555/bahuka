@@ -12,10 +12,10 @@
     <gap:plugin name="cordova-plugin-file-transfer" source="pgb"  />
    <gap:plugin name="cordova-plugin-file" source="pgb"  />
 
- <gap:plugin name="cordova-plugin-camera"  />
-   <gap:plugin name="cordova-plugin-media"  />
-    <gap:plugin name="cordova-plugin-device"  />
-    <gap:plugin name="cordova-plugin-file"  />
+ <plugin name="cordova-plugin-camera"  />
+   <plugin name="cordova-plugin-media"  />
+    <plugin name="cordova-plugin-device"  />
+    <plugin name="cordova-plugin-file"  />
 
 
     <!-- <plugin name="com.phonegap.plugins.pushplugin" spec="2.5.0" source="pgb" /> -->
