@@ -1,0 +1,46 @@
+<html>
+
+<html>
+
+<body>
+ <div class="header_div">
+    <div id="top-navbar" class="sidemenu_bar">
+         <img id="side_menu" src="img/topmenulines.png">
+    </div>
+  
+<div class="search-post"></div>
+
+
+    <div class="bahuka_menu_name">
+        <img id="side_menu" src="img/bahukaname2.png">
+        
+    </div>
+    <div class="search-post-append"></div>
+  </div>
+</body>
+
+</html>
+
+<script type="text/javascript">
+
+jQuery( "#top-navbar" ).click(function() {   
+    jQuery('#sidebar').load('sidemenubar.html');
+        
+     if( jQuery('#sidebar').is(':visible') ) {
+        jQuery('#sidebar').animate({ 'width': '0px' }, 'normal', function(){
+            jQuery('#sidebar').hide();              
+        });
+        jQuery('#main-content').animate({ 'margin-left': '0px' }, 'normal');
+    }
+    else {
+        getuserprofile(); /*  Function to get Login user profile details at sidebar*/
+        jQuery('#sidebar').show();
+       
+       
+        jQuery('#sidebar').animate({ 'width': '280px' }, 'normal');
+        jQuery('#main-content').animate({ 'margin-left': '280px' }, 'slow');
+    }
+});
+
+
+</script>

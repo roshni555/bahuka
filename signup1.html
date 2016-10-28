@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<!--
+Licensed to the Apache Software Foundation (ASF) under one
+or more contributor license agreements.  See the NOTICE file
+distributed with this work for additional information
+regarding copyright ownership.  The ASF licenses this file
+to you under the Apache License, Version 2.0 (the
+"License"); you may not use this file except in compliance
+with the License.  You may obtain a copy of the License at
+
+http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing,
+software distributed under the License is distributed on an
+"AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+KIND, either express or implied.  See the License for the
+specific language governing permissions and limitations
+under the License.
+-->
+<html style="height:100%">
+<head>
+
+
+<!--
+Customize this policy to fit your own app's needs. For more guidance, see:
+https://github.com/apache/cordova-plugin-whitelist/blob/master/README.md#content-security-policy
+Some notes:
+* gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
+* https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
+* Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
+    * Enable inline JS: add 'unsafe-inline' to default-src
+-->
+
+<!-- <meta http-equiv="Content-Security-Policy" content="default-src '   self' daat: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *">
+
+<meta name="format-detection" content="telephone=no">
+<meta name="msapplication-tap-highlight" content="no">
+<meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width"> -->
+  <link rel="stylesheet" type="text/css" href="css/index.css">
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/jsDatePick_ltr.min.css">
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
+  <script type="text/javascript" src="js/jquer_libs.js"></script>
+  <script type="text/javascript" src="js/index.js"></script>
+  <script type="text/javascript" src="js/function.js"></script>
+  <script src="https://code.jquery.com/jquery-1.10.2.js"></script>  
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <script src="http://lab.iamrohit.in/js/location.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+
+
+
+<title>Hello World</title>
+</head>
+<body class="location3">
+   <div class="main-school">
+      <div class="our-school">
+          <div class="heading">  
+            <h1> Find your school  </h1>
+          </div>
+          <div class="form-in">
+              <input  id="emial" type="text" placeholder="campus email..." required/>
+          </div>
+          <div class="verification">
+              <p> <span class="verify">  Verify</span>  </p>
+          </div>
+      </div>
+      <div class="imgappend2"></div>
+      <div class="imgappend"></div>
+       <div class="basic">
+          <div class="heading">  
+            <h1 id="basic_id"> The Basics...  </h1>
+          </div>
+          <div class="form-in">
+              <input type="text" id="first-name" placeholder="Name" name="name" value="">
+              <input type="text" id="user-name" placeholder="Username" name="name">
+              <input type="password" id="user-password" placeholder="Password" name="password">
+              <input type="password" id="user-varifypassord" placeholder="Verify Password" name="verify-password">
+
+          </div>
+      </div> 
+      <div class="arrow">
+          <div class="left-arrow">
+            <a href="index.html"> <img src="img/arrow-left.png"> </a>
+          </div>
+          <div class="right-arrow">
+            <a href="#" class="firstpage-next"> <img src="img/arrow-right.png"> </a>
+          </div>
+   </div>
+   </div>
+
+   <!--second student page -->
+
+
+      <div class="main-school-second-page">
+    
+  <div class="header-text2">
+    <h1> Can't find your school?
+</h1>
+<div class="Bahuka-growing">
+ Bahuka is still growing 
+ </div>
+</div>
+<div class="image-part-second-img">
+  
+  <img src="img/sedond_student_img.png">
+</div>
+<div class="seond-Help-us-grow">Help us  grow</div>
+<div class="seond-Help-us-grow2">Tell your school about us</div>
+<div class="your-college">
+<select>
+<option> Select your college... </option>
+</select>
+</div>
+<div class="send-mail">
+<p> <span class="mail"> <a href="#"> Send email </a> </span>  </p>
+</div>
+
+<div class="arrow-grow">
+<div class="left-arrow-grow">
+<a href="#"> <img src="img/growing-left-arrow.png"> </a>       
+</div>
+</div>
+
+
+  
+   </div>
+
+   <!--Third signup page start-->
+
+   <div class="student-login-main">
+          <div class="student-login">
+              <div class="student-login-heading">  
+                 <h1> School Info... </h1>
+              </div>
+              <div class="student-login-image">  
+<div class="femail-class"> <p>  <img class="click-female-image" src="img/female.png"><b class="female-imgcheck"><img src="img/tick.png"></b><b class="female-text">female</b></p></div>
+   <div class="male-class"> <p> <img  class="click-male-image" src="img/male.png"> <b class="male-imgcheck"><img src="img/tick.png"></b><b class="male-text">male</b> </p></div>
+   <input  class="gender" type="hidden" name="gender" value="female">
+       
+
+              </div>
+                <div class="student-info">
+                    <div class="form-in">
+                      <input type="text" id="jsmajor" name="jsmajor" placeholder="Major/Program...">
+                      <input type="text" id="jsgraduation" name="jsgraduation" placeholder="Graduation year...">
+                      <select id="first_go_college" name="first_go_college">
+                        <option value=""> First to go to college? </option>
+                        <option value="Yes">Yes </option>
+                        <option value="No">No </option>
+
+
+                      </select>
+                      <select id="military_or_veteran" name="military_or_veteran">
+                        <option value=""> Veteran or Military? </option>
+                        <option value="Active Duty">Active Duty </option>
+                        <option value="Veteran">Veteran </option>
+                        <option value="No">No </option>
+                      </select>
+ 
+                  </div>
+                </div>
+                <div class="arrow">
+                    <div class="left-arrow">
+                      <a href="#" class="second-login-left"> <img src="img/studentthird_arrowleft.png"> </a>
+                    </div>
+                    <div class="right-arrow">
+                      <a href="#" class="second-login-right"> <img src="img/student_right_arrow.png"> </a>
+                    </div>
+                </div>
+          </div>
+    </div>
+
+
+
+<!--student login 3 start-->
+  <div class="student-login-3 main-page-student">
+    <div class="student-login-3 top-page-student">
+      <img src="img/nature.png">
+      <h1> Where are you from... </h1>
+    </div>  
+    <div class="student-login-3  form-in">
+
+    <input id="datepicker" /   placeholder="Enter Your Birthday">
+
+
+
+              <input type="text"  id="jscitytown" name="jscitytown" placeholder="City/ Town...">
+        
+             
+            
+                  <select id="countryId" class="resistration_select22 countries" required="required" name="jscountry">
+              <option value="">  Country... </option>  
+        </select> 
+
+              <select name="jsstate" class="resistration_select22 states" id="stateId">
+             <option value="">  State... </option> 
+              </select>
+
+    
+          </div>
+
+ 
+<div class="arrow2">
+                    <div class="left-arrow2">
+                      <a href="#" class="last-left-arrow"> <img src="img/studentthird_arrowleft.png"> </a>
+                    </div>
+                    <div class="right-arrow2">
+                      <a href="#" class="last-right-arrow"> <img src="img/student_right_arrow.png"> </a>
+                    </div>
+                </div>
+
+    </div> 
+
+<!--student login 4 start-->
+
+
+<div class="student-login4 maindiv">
+  
+
+<div class="main-text4">
+<h1>My Bio...</h1>
+</div>
+<div class="lofin-conformation-msg"></div>
+<div class="student4-login maintext">
+<textarea placeholder="Write a little about yourself..." rows="10" cols="30" id="jsbiotext"></textarea>
+ </div>
+ <div class="main-text-g5">
+<h1> Interests...</h1>
+</div>
+<div class="student-login-g5-select">
+<select class="country" multiple>  <option>Choose the interest</option>
+<option value="Anything Sciency"> Anything Sciency </option>
+ <option value="Anything Engineering"> Anything Engineering </option>
+<option  value="Book over TV"> Book over TV </option>
+<option  value="Theory Addict">Theory Addict </option>
+<option value="Food Science">Food Science</option>
+<option value="Space Junky">Space Junky</option>
+</select>
+</div>
+ <div class="append"></div>
+
+<div class="student-login-g6-button">
+ <a href="#" onload="arv();"> Finish </a>   
+</div>
+
+<p class="forgot25">By using Bahuka, you are agreeing to our<span style="text-decoration:underline;font-weight: bold; font-family: caption;"><a href="term-of-service-page.html">Terms of Service</a></span> and <span style="text-decoration:underline;font-weight: bold; font-family: caption;"><a href="privacy-page.html">Privacy Policy.</a></span></p>
+<div class="arrow-last2">
+          <div class="left-arrow-left2">
+            <a href="#"> <img src="img/arrow-left.png"> </a>
+          </div>
+          
+   </div>
+
+
+
+
+</div>
+
+
+<!--student login 4 start-->
+
+<div class="school-not-found greydiv" style="display: none;">
+  <div class="school-main-div">
+    <div class="school-paragrph-image">
+      <div class="school-paragraphs">
+        <h2>Can't find You School?</h2>
+        <p> Bahuka is still growing</p>
+      </div>
+      <div class="growing-images">
+        <img src="img/growing.png">
+      </div>
+      <div class="school-paragraphs">
+        <h2>Help us Grow</h2>
+        <p>Tell your school about us</p>
+      </div>
+    </div>
+
+      <div class="find-school">
+      <div id= "college-details-select">
+      <select id="first_find_college" name="first_find_college">
+        <option value=""> Select your college? </option>
+      </select>
+       </div>
+      
+
+        <div class="send_emailbutton">
+          <button id="send_email_btn" onclick="CollegeSendemail();"> Go to College </button>
+        </div>
+      </div>
+    </div>
+    <div class="arrow-last2">
+          <div class="left-arrow-leftschool">
+            <a href="signup1.html"> <img src="img/greyarrow.png"> </a>
+          </div>
+   </div>
+</div>
+
+
+</body>
+</html>
+
+ <script>
+    jQuery( "#datepicker" ).datepicker({
+      changeMonth: true,
+      changeYear: true,
+
+      yearRange: "-100:+0",
+    });
+  </script>

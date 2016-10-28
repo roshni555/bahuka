@@ -1,0 +1,131 @@
+<head>
+<meta name="viewport" content="width=device-width; initial-scale=1.0;">
+<link rel="stylesheet" type="text/css" href="css/index.css">
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<script type="text/javascript" src="cordova.js"></script>
+<script type="text/javascript" src="js/jquer_libs.js"></script>
+<script type="text/javascript" src="js/canvas.js"></script>
+<script type="text/javascript" src="js/function.js"></script>
+ 
+</head>
+<body onload="jas();">
+
+<div id="main-content">
+<div id="header"> </div> <!-- header.html -->
+<div id="sidebar"></div> <!-- sidemenubar.html -->
+</div>
+
+<div class="student-result">
+
+<!-- <div class="student-result-page01">
+<div class="student-result-img1">
+<img src="img/amatchingat.png"></img>
+
+ 
+<div class="student-rslt-txt">
+<p class="Student-name-txt">Sarah Miller</p>
+<p>Student, UCLA</p></div> -->
+
+</div>
+
+</div>
+<div class="result-percentage">
+<div id="chartContainer" style="height: 300px; width: 100%;"></div>
+</div>
+
+<div class="rest-lable-txt">
+  
+<div class="lable-txt-div"><img src="img/auditory_img.png"><p>Auditory</p></div>
+<div class="lable-txt-div"><img src="img/visualimg.png"><p>Visual</p></div>
+<div class="lable-txt-div"><img src="img/kinestjheticimg.png"><p>Kinesthetic</p></div>
+<div class="lable-txt-div"><img src="img/textual_img.png"><p>Textual</p></div>
+</div>
+<!-- <div class="tip-t0-know"><p onclick="popup();">Tip to know</p></div> -->
+ <div class="classes tipspage"><a href="student-classes-page.html"> Classes</a></div>
+</div>
+ 
+<div class="popup" data-popup="popup-1">
+    <div class="popup-inner">
+     <div class="pop-screen-rslt">
+   <div class="popup-main-rslt">
+          <div class="heading_popup-rslt">  
+            <h1>Tips to Know </h1>
+          
+          </div>
+           <a class="boxclose-rslt" id="boxclose-rslt"></a>
+         <div class="heading_tips-rslt">  
+          <div class="circle-rslt">  </div>
+           <div class="circle2-rslt"> <h1 id="Aud-clr">Auditory</h1> </div>
+          </div>
+
+<div class="list-rslt">
+<li>Use Your Phone to record notes</li><li>Read your notes aloud when Studying.</li><li>Work with a study partner to review out loud. </li><li>Work in a group where you can discuss the information. </li><li>Record lectures and note times in lecture you aren't understanding.</li><li>Review these recorded times later for extra review.</li><li>When learning new material,especially equations,talk your way through the material.</li><li>Use of metaphors similes to compare and remember(say them out loud).</li><li>Use online resources apps like Youtube, Vimeo, and TED Talks.</li>
+			</div>
+
+<div class="heading_tips-rslt">  
+<div class="circle-rslt-red">  </div>
+<div class="circle2-rslt"> <h1 id="Vis-clr">Visual</h1> </div>
+</div>
+<div class="list-rslt">
+<li>Use the margins to draw diagrams of your notes,or your notes app.</li>
+<li>Create a flowchart for the progression of your notes and ideas.</li>
+<li>Make flashcards with visual clues.</li>
+<li>Highlight key information in your texts or notes.</li>
+<li>Create a chart or a series of different color boxes to write information in, use colors to remember information.</li>
+<li>Use your laptops to convert data and notes into charts, table, graphics, pictures, etc.</li>
+
+</div>
+
+
+
+<div class="heading_tips-rslt">  
+<div class="circle-rslt-org">  </div>
+<div class="circle2-rslt"> <h1 id="Kin-clr">Kinesthetic</h1> </div>
+</div>
+<div class="list-rslt">
+<li>Assemble charts and diagrams.</li>
+<li>Take breaks when studying.</li>
+<li>Combine an activity when studying.</li>
+<li>Use tools such as flashcards and mnemonics.</li>
+<li>Keep your fingers busy while studying.</li>
+ 
+
+</div>
+
+
+
+<div class="heading_tips-rslt">  
+<div class="circle-rslt-grn">  </div>
+<div class="circle2-rslt"> <h1 id="Tex-clr">Textual</h1> </div>
+</div>
+<div class="list-rslt" style="margin-bottom: 25%;">
+<li>Re-write your notes after class.</li>
+<li>Highlight important information.</li>
+<li>Write notes to yourself on the side.</li>
+<li>Write out key concepts and ideas to focus on.</li>
+<li>Compose short explanations for diagrams,charts,and graps.</li>
+
+<li>Write out instructions for each steps of a procedure or math problem.</li>
+<li>Use post-its in visible places to review (like by the mirror when you are brushing your teeth).</li>
+ 
+
+</div>
+
+      </div> </div>
+
+     
+    <!--     <a class="popup-close" data-popup-close="popup-1" onclick="popclose();" href="#">x</a> -->
+    
+
+    </div>
+</div>
+
+</body></html>
+
+
+<script type="text/javascript">
+$(document).ready(function(){
+    $('#sidebar').hide();   
+    $('#header').load('header.html');
+});
+</script>

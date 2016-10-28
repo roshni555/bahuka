@@ -1,0 +1,36 @@
+<head>
+<meta name="viewport" content="width=device-width; initial-scale=1.0;">
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;" />
+<link rel="stylesheet" type="text/css" href="css/index.css">
+<link href='https://fonts.googleapis.com/css?family=Cookie' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<script type="text/javascript" src="cordova.js"></script>
+<script type="text/javascript" src="js/jquer_libs.js"></script>
+<script type="text/javascript" src="js/canvas.js"></script>
+<script type="text/javascript" src="js/function.js"></script>
+ 
+</head>
+<body>
+
+<div id="main-content">
+<div id="header"> </div> <!-- header.html -->
+<div id="sidebar"></div> <!-- sidemenubar.html -->
+</div>
+
+<div id="student-class-group-pge" class="student-class-group-pge">
+ 
+	<div id="student-clases-groups" class="student-clases-groups">
+	   <div id="divLoading"> 
+    </div>
+
+	</div>
+</div>
+
+</body>
+
+<script type="text/javascript">
+$(document).ready(function(){
+    $("#divLoading").addClass('show');
+  	$('#header').load('header.html');
+});
+</script>

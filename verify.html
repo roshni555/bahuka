@@ -1,0 +1,67 @@
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viweport" content="width=device-width, initial-scale = 1.0"/> 
+
+<link rel="stylesheet" type="text/css" href="css/style.css">
+
+
+
+<script type="text/javascript" src="js/jquer_libs.js"></script>
+<script type="text/javascript" src="js/function.js"></script>
+</head>
+<body>
+
+
+<header>
+<div class="container">
+	<div class="joining">
+		<h1> Thanks You For Joining</h1>
+		<p> You account has been created and an activation link and been 
+		send to the email address you entered
+		</p>
+		<div class="juck">
+		<p class="bluep"> Click the Activation link in the email before logging in.</p>
+		<p>Don't see it in you inbox? check your juck mail</p>
+		</div>
+		<div class="imgjoining">
+			<img src="img/verify_mail.png">
+		</div>
+	</div>
+	<div class="created">
+		<h1> Didn't Get an Email?</h1>
+		<p> Send us a Verify Request</p>
+    <p id="mail-status"></p>
+
+	<div class="verifymain">
+	<form method="post"  action="" id="verifyform">
+	<div class="controls">
+			
+			<input type="text" id="mycollege" placeholder="College..." name="college" required>
+		   </div>
+		   <div class="controls">
+			<input type="text" id="myname" placeholder="Name..." name="name" required>
+			 
+		   </div>
+		   <div class="controls">
+			<input type="text" id="myemail" placeholder="Campus Email..." name="campus_email" required>
+			   	  
+			  
+		   </div>
+ <div class="submit">
+	<input type="button" value="Send" name="submit" onclick="sendverification();">
+  </div>
+</form>
+</div>
+<div class="lastimage">
+<img src="img/verify_man.png">
+</div>
+</div>
+
+</header>
+</body>
+</html>
+
+<style>
+<link rel="stylesheet" type="text/css" href="css/style.css">
+</style>

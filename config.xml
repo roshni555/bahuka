@@ -1,0 +1,54 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="io.cordova.bahuka" version="1.1.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <name>Bahuka</name>
+    <description>
+        A sample Apache Cordova application that responds to the deviceready event.
+    </description>
+    <author email="dev@cordova.apache.org" href="http://cordova.io">
+        Apache Cordova Team
+    </author>
+    <content src="index.html" />
+    <plugin name="cordova-plugin-whitelist" spec="1" />
+    <plugin name="cordova-plugin-file-transfer" source="pgb"  />
+    <plugin name="cordova-plugin-file" source="pgb"  />
+
+    <plugin name="cordova-plugin-camera"  />
+    <plugin name="cordova-plugin-media"  />
+    <plugin name="cordova-plugin-device"  />
+    <plugin name="cordova-plugin-file"  />
+
+
+    <!-- <plugin name="com.phonegap.plugins.pushplugin" spec="2.5.0" source="pgb" /> -->
+    <access origin="*" />
+    <allow-intent href="http://*/*" />
+    <allow-intent href="https://*/*" />
+    <allow-intent href="tel:*" />
+    <allow-intent href="sms:*" />
+    <allow-intent href="mailto:*" />
+    <allow-intent href="geo:*" />
+
+    <platform name="android">
+        <allow-intent href="market:*" />
+    </platform>
+    <platform name="ios">
+        <allow-intent href="itms:*" />
+        <allow-intent href="itms-apps:*" />
+    </platform>
+
+    <icon src="icons/logo_57x57.png" gap:platform="ios" width="57" height="57" />
+<icon src="icons/logo_72x72.png" gap:platform="ios" width="72" height="72" />
+<icon src="icons/logo_76x76.png" gap:platform="ios" width="76" height="76" />
+<icon src="icons/logo_120x120.png" gap:platform="ios" width="120" height="120" />
+<icon src="icons/logo_152x152.png" gap:platform="ios" width="152" height="152" />
+<icon src="icons/logo_180x180.png" gap:platform="ios" width="180" height="180" />
+
+  <icon src="icons/logo.png"  gap:platform="android"/>
+  <icon src="icons/logo.png" gap:platform="ios" />
+ <access origin="*" subdomains="true" />
+<engine name="android" spec="~4.1.1" />
+
+<preference name="AllowInlineMediaPlayback" value="true" />    
+ <preference name="DisallowOverscroll" value="true" />
+
+
+</widget>

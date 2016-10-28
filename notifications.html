@@ -1,0 +1,121 @@
+<head>
+
+
+<script>
+
+
+var  userid = localStorage.getItem('loginurid');
+</script>
+
+
+
+<meta name="viewport" content="width=device-width; initial-scale=1.0;">
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;" />
+<link rel="stylesheet" type="text/css" href="css/index.css">
+<link href='https://fonts.googleapis.com/css?family=Cookie' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<script type="text/javascript" src="cordova.js"></script>
+<script type="text/javascript" src="js/jquer_libs.js"></script>
+<script type="text/javascript" src="js/canvas.js"></script>
+<script type="text/javascript" src="js/function.js"></script>
+
+</head>
+<body onload="notifications();" class="notificationDiv">
+<div id="main-content">
+<div id="header"> </div> <!-- header.html -->
+<div id="sidebar"></div> <!-- sidemenubar.html -->
+</div>
+
+<div class="notification_main  student-class-group-pge"  id="student-class-group-pge">
+<div id="postdata-main"></div>
+		<!-- <div  class="notification_center">
+			<ul class="notific_lists">
+				<li>
+					<div class="list_notific_details">
+						<div  class="notification_text">
+							
+							<h1><span id="notic_nmber"> 6</span> people liked your post in <span id="notic_action">MAT231</span></h1>
+							<p> 1 min ago </p>
+						</div>
+						<div class="notifcation_image">
+							<img src="img/likethumb.png"/>
+						</div>
+					</div>
+				</li>
+				<li>
+					<div class="list_notific_details">
+						<div  class="notification_text">
+							
+							<h1><span id="notic_name">Amy West </span> Commented on your <span id="notic_action">post</h1>
+							<p> 1 day ago </p>
+						</div>
+						<div class="notifcation_image">
+							<img src="img/comment-notifictaion.png"/>
+						</div>
+					</div>
+				</li>
+				<li>
+					<div class="list_notific_details">
+						<div  class="notification_text">
+							
+							<h1> <span id="notic_name">Racheal Smith</span> liked your <span id="notic_action">comment</span></h1>
+							<p> 5 days ago </p>
+						</div>
+						<div class="notifcation_image">
+							<img src="img/likethumb.png"/>
+						</div>
+					</div>
+				</li>
+				<li>
+					<div class="list_notific_details">
+						<div  class="notification_text">
+							
+							<h1><span id="notic_nmber"> 8 </span>people liked your <span id="notic_action">Profile</span></h1>
+							<p> 1 min ago </p>
+						</div>
+						<div class="notifcation_image">
+							<img src="img/likethumb.png"/>
+						</div>
+					</div>
+				</li>
+				<li>
+					<div class="list_notific_details">
+						<div  class="notification_text">
+							
+							<h1> <span id="notic_name">Eric Brow</span> commented on your <span id="notic_action">post</span></h1>
+							<p> 9 days ago </p>
+						</div>
+						<div class="notifcation_image">
+							<img src="img/comment-notifictaion.png"/>
+						</div>
+					</div>
+				</li>
+				<li>
+					<div class="list_notific_details">
+						<div  class="notification_text">
+							
+							<h1> <span id="notic_name">Lisa Roger</span> mentioned you in a <span id="notic_action">post</span></h1>
+							<p> </p>
+						</div>
+						<div class="notifcation_image">
+							<img src="img/comment-notifictaion.png"/>
+						</div>
+					</div>
+				</li>
+			</ul>
+			
+		</div> -->
+	</div>
+
+
+
+
+</body>
+
+<script type="text/javascript">
+$(document).ready(function(){
+    $("#divLoading").addClass('show');
+  
+  	$('#header').load('header.html');
+});
+</script>

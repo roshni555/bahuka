@@ -1,0 +1,454 @@
+/*
+ * Licensed to the Apache Software Foundation (ASF) under one
+ * or more contributor license agreements.  See the NOTICE file
+ * distributed with this work for additional information
+ * regarding copyright ownership.  The ASF licenses this file
+ * to you under the Apache License, Version 2.0 (the
+ * "License"); you may not use this file except in compliance
+ * with the License.  You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing,
+ * software distributed under the License is distributed on an
+ * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ * KIND, either express or implied.  See the License for the
+ * specific language governing permissions and limitations
+ * under the License.
+ *//*
+var app = {
+    // Application Constructor
+    initialize: function() {
+        this.bindEvents();
+    },
+    // Bind Event Listeners
+    //
+    // Bind any events that are required on startup. Common events are:
+    // 'load', 'deviceready', 'offline', and 'online'.
+    bindEvents: function() {
+        document.addEventListener('deviceready', this.onDeviceReady, false);
+    },
+    // deviceready Event Handler
+    //
+    // The scope of 'this' is the event. In order to call the 'receivedEvent'
+    // function, we must explicitly call 'app.receivedEvent(...);'
+    onDeviceReady: function() {
+        app.receivedEvent('deviceready');
+    },
+    // Update DOM on a Received Event
+    receivedEvent: function(id) {
+        var parentElement = document.getElementById(id);
+        var listeningElement = parentElement.querySelector('.listening');
+        var receivedElement = parentElement.querySelector('.received');
+
+        listeningElement.setAttribute('style', 'display:none;');
+        receivedElement.setAttribute('style', 'display:block;');
+
+        console.log('Received Event: ' + id);
+    }
+};
+
+app.initialize();
+
+*/
+
+jQuery(document).ready(function()
+{
+
+
+ 
+
+  jQuery( ".ds" ).click(function() {
+
+var admin=jQuery(this).attr('for');
+//alert(admin);
+if(admin=="C1")
+{
+window.location.href="index.html";
+}
+if(admin=="C2")
+{
+ window.location.href="index2.html";
+}
+if(admin=="C3")
+{
+window.location.href="index3.html";
+}
+if(admin=="C4")
+{
+window.location.href="index4.html";
+}
+ 
+
+ });
+
+
+
+ jQuery(".firstpage-next").click(function(){
+
+var emial=jQuery("#emial").val();
+
+var fistname=jQuery("#first-name").val();
+
+var usrname=jQuery("#user-name").val();
+
+var pass1=jQuery("#user-password").val();
+var pass2=jQuery("#user-varifypassord").val();
+if(emial=="")
+{
+jQuery("#emial").focus();
+ jQuery("#emial").toggleClass('red');
+}else if(fistname=="")
+{
+jQuery("#first-name").focus();
+ jQuery("#first-name").toggleClass('red');
+
+}else if(usrname=="")
+{
+  jQuery("#user-name").focus();
+   jQuery("#user-name").toggleClass('red');
+}else if(pass1=="")
+{
+jQuery("#user-password").focus(); 
+jQuery("#user-password").toggleClass('red');
+}else if(pass2=="")
+{
+jQuery("#user-varifypassord").focus(); 
+jQuery("#user-varifypassord").toggleClass('red');
+ }else{
+
+if(pass1==pass2)
+{
+jQuery(".main-school").css("display" ,"none");
+jQuery(".student-login-main").css("display" ,"block");
+  }
+  else
+  {
+jQuery("#user-varifypassord").focus(); 
+jQuery("#user-varifypassord").toggleClass('red');
+jQuery("#user-password").focus(); 
+jQuery("#user-password").toggleClass('red');
+
+  }
+  }
+   
+ }); 
+
+ jQuery(".second-login-right").click(function(){
+   jQuery(".student-login-main").css("display" ,"none");
+    jQuery(".student-login-3.main-page-student").css("display" ,"block");
+   
+ }); 
+ 
+
+  jQuery(".last-right-arrow").click(function(){
+ 
+var citytown=jQuery("#jscitytown").val();
+var state=jQuery( "#jsstate option:selected" ).val();
+var country=jQuery( "#jscountry option:selected" ).val();
+var birthdate=jQuery( "#jsbirthdate option:selected" ).val();
+
+if(citytown=="")
+{
+jQuery("#jscitytown").focus();
+jQuery("#jscitytown").toggleClass('red');
+}else if(state=="")
+{
+jQuery("#jsstate").focus();
+jQuery("#jsstate").toggleClass('red');
+
+}else if(country=="")
+{
+jQuery("#jscountry").focus();
+jQuery("#jscountry").toggleClass('red'); 
+}else if(birthdate=="")
+{
+jQuery("#jsbirthdate").focus();
+jQuery("#jsbirthdate").toggleClass('red'); 
+}else{
+
+   jQuery(".student-login-3.main-page-student").css("display" ,"none");
+  jQuery(".student-login4.maindiv").css("display" ,"block");
+} 
+
+ jQuery(".student-login-3.main-page-student").css("display" ,"none");
+  jQuery(".student-login4.maindiv").css("display" ,"block");
+   
+ }); 
+
+   jQuery(".left-arrow-left2").click(function(){
+   jQuery(".student-login4.maindiv").css("display" ,"none");
+    jQuery(".student-login-3.main-page-student").css("display" ,"block");
+   
+ });
+
+    jQuery(".last-left-arrow").click(function(){
+   jQuery(".student-login-3.main-page-student").css("display" ,"none");
+    jQuery(".student-login-main").css("display" ,"block");
+   
+ }); 
+
+    jQuery(".left-arrow").click(function(){
+   jQuery(".student-login-main").css("display" ,"none");
+    jQuery(".main-school").css("display" ,"inline");
+
+
+   
+ }); 
+
+ 
+   jQuery( ".verify" ).click(function() {
+
+
+
+    if(jQuery("#emial").val()=="")
+ {
+  jQuery("#emial").focus();
+ // alert('Please enter your email');
+     return false;
+}
+
+ var emailRegExp = /^[_a-zA-Z0-9-]+(\.[_a-zA-Z0-9-]+)*@[a-zA-Z0-9-]+(\.[a-zA-Z0-9-]+)*(\.([a-zA-Z]){2,4})$/;
+ if(!emailRegExp.test(jQuery("#emial").val())){  
+ // jQuery("#btl-registration-error").html(btlOpt.MESSAGES.EMAIL_INVALID).show();
+ //alert('Please enter the valid email')
+jQuery("#emial").focus().select();
+  return false;
+ }
+ var emial11 = jQuery("#emial").val();
+  var task = "varifirequest";
+  var emial = emial11;
+
+    var varifidata = {
+    task: task,
+    emial:emial11,
+
+
+  }; 
+    
+
+        jQuery.ajax({url: "http://bahuka.com/home/index.php?option=com_content&view=appcode",data:varifidata, success: function(result){
+
+if(result)
+{
+  //alert(result);
+
+
+    jQuery( ".imgappend" ).html('');
+    jQuery( ".imgappend2" ).html('');
+      if(result==1)
+  {
+
+    var text="Email Already used, Please try different email!";
+  jQuery( ".imgappend2" ).append( "<p>"+text+"</p>");
+  jQuery( "#emial" ).val('');
+  jQuery("#emial").focus();
+  jQuery("#emial").toggleClass('red');
+
+  }
+    var arr = result.split('k***p');
+    var s=arr[0];
+    var b=arr[1];
+    var arr2 = b.split('/');
+    var path="img/";
+
+    jQuery( ".imgappend2" ).append( "<p>"+s+"</p>");
+    jQuery( ".imgappend" ).append( "<img src="+path+arr2[1]+">");
+
+
+      //alert(b);
+    }
+
+
+ 
+        }});
+
+            
+
+   });
+
+
+  jQuery(".student-login-g6-button").click(function(){
+
+//alert('jas');
+var emial = jQuery("#emial").val();
+var firstname = jQuery("#first-name").val();
+var username= jQuery("#user-name").val();
+var userpassword= jQuery("#user-password").val();
+var uservarifypassord= jQuery("#user-varifypassord").val();
+
+
+var jsmajor=  jQuery("#jsmajor").val();
+var jsgraduation= jQuery("#jsgraduation").val();
+var first_go_college = jQuery("#first_go_college").val();
+var military_or_veteran=jQuery("#military_or_veteran").val();
+
+var jscitytown = jQuery("#jscitytown").val();
+var jsstate = jQuery("#jsstate").val();
+var jscountry=jQuery("#jscountry").val();
+var jsbirthdate= jQuery("#jsbirthdate").val();
+
+var jsbiotext=jQuery("#jsbiotext").val();
+
+var gender=jQuery(".gender").val();
+
+
+  var task = "registerdata";
+  var emial = emial;
+  var firstname = firstname;
+  var username = username;
+  var userpassword =userpassword;
+  var uservarifypassord=uservarifypassord;
+
+
+  var major = jsmajor;
+  var jsgraduation = jsgraduation;
+  var first_go_college =first_go_college;
+  var military_or_veteran=military_or_veteran;
+
+
+
+  var jsgraduation = jsgraduation;
+  var jsgraduation = jsgraduation;
+  var first_go_college =first_go_college;
+  var military_or_veteran=military_or_veteran;
+
+  var gender=gender;
+
+
+
+  
+
+
+  var formData = {
+    task: task,
+    emial:emial,
+    firstname: firstname,
+    username: username,
+    userpassword: userpassword,
+    uservarifypassord: uservarifypassord,
+    major: jsmajor,
+    jsgraduation: jsgraduation,
+    first_go_college: first_go_college,
+    military_or_veteran: military_or_veteran,
+    jsbiotext:jsbiotext,
+    gender:gender,
+
+
+  }; 
+  jQuery.ajax({
+    type: "post",
+    url: "http://bahuka.com/home/index.php?option=com_content&view=appcode",
+    data: formData,
+    //  beforeSend: function () { jQuery.mobile.loading('show'); },
+    success: function(response) {
+      alert("Record saved successfully..!!");
+    },
+    error: function () { 
+      alert("Error");
+    }
+  }); 
+
+         
+
+
+
+   
+   });
+
+
+jQuery(".click-male-image").click(function(){
+
+  //alert('hello');
+  jQuery(".female-imgcheck").css("display","none");
+    jQuery(".male-imgcheck").css("display","block");
+        jQuery(".gender").val("male");
+
+});
+
+jQuery(".click-female-image").click(function(){
+
+  //alert('hello');
+  jQuery(".male-imgcheck").css("display","none");
+    jQuery(".female-imgcheck").css("display","block");
+      jQuery(".gender").val("female");
+});
+
+
+
+
+  /* Forget password  function*/
+  jQuery("#comp-ikjvhz43link").click(function(){
+    //alert('hello i am forget password')
+var forgetval=jQuery("#forget-passwrod").val();
+    if(forgetval=="")
+    {
+      jQuery("#forget-passwrod").focus();
+      jQuery("#forget-passwrod").toggleClass('red');
+    }
+    else
+    {
+   fogetvalue=jQuery("#forget-passwrod").val();
+       var emailRegExp = /^[_a-zA-Z0-9-]+(\.[_a-zA-Z0-9-]+)*@[a-zA-Z0-9-]+(\.[a-zA-Z0-9-]+)*(\.([a-zA-Z]){2,4})$/;
+ if(!emailRegExp.test(fogetvalue)){  
+ // jQuery("#btl-registration-error").html(btlOpt.MESSAGES.EMAIL_INVALID).show();
+ //alert('Please enter the valid email')
+jQuery("#forget-passwrod").focus();
+jQuery("#forget-passwrod").toggleClass('red');
+// alert('valid emil');
+return false;
+ }
+
+
+  var task = "forgetpasswrod";
+  var fogetvalue = fogetvalue;
+  var formDatae = {
+    task: task,
+    fogetvalue:fogetvalue,
+      }; 
+
+  jQuery.ajax({
+    type: "post",
+    url: "http://bahuka.com/home/index.php?option=com_content&view=appcode",
+    data: formDatae,
+    //  beforeSend: function () { jQuery.mobile.loading('show'); },
+    success: function(response) {
+jQuery(".append-forget-text" ).html('');
+      //alert(response);
+      if(response==1)
+      {
+        var nonetext="This emial is not valid please enter valid email";
+         jQuery( ".append-forget-text" ).append( "<p>"+nonetext+"</p>");
+      }
+      if(response==2)
+      {
+var succesfulltxt="Your password successfully reset please check your email";
+         jQuery( ".append-forget-text" ).append( "<p class='green'>"+succesfulltxt+"</p>");
+
+      }
+
+
+       
+   
+    //alert("forget saved successfully..!!");
+    },
+    error: function () { comp-ikjvhz43link
+    alert("Error");
+
+    }
+    }); 
+  }
+
+
+  });
+
+
+
+  //alert('hello'); 
+});
+
+/*var arv = function(){
+
+ 
+
+}*/

@@ -1,0 +1,78 @@
+<html>
+<head>
+
+<link rel="stylesheet" type="text/css" href="css/index.css">
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<link rel="stylesheet" type="text/css" href="css/jsDatePick_ltr.min.css">
+<script type="text/javascript" src="js/jquer_libs.js"></script>
+<script type="text/javascript" src="js/function.js"></script>
+<script type="text/javascript" src="js/canvas.js"></script>  
+
+
+</head>
+
+<body onload="studenttestdd();"> 
+
+<div id="main-content">
+<div id="header"> </div> <!-- header.html -->
+<div id="sidebar"></div> <!-- sidebar.html -->
+</div>
+
+<div class="student-test">
+
+    <div class="student-test-logo"> 
+        <div class="test-images effect2"> 
+          <img id="qst1" src="img/quest1.png">
+        </div>
+        <div class="test-images effect2"> 
+          <img  id="qst2" src="img/classes_2.jpg">
+        </div>
+        <div class="test-images effect2"> 
+          <img  id="qst3" src="img/travell_3.jpg">
+        </div>
+        <div class="test-images effect2"> 
+          <img  id="qst4" src="img/retain4.jpg">
+        </div>
+        <div class="test-images effect2"> 
+          <img  id="qst5" src="img/reading_5.jpg">
+        </div>
+        <div class="test-images effect2"> 
+          <img  id="qst6" src="img/larn_language6.jpg">
+        </div>
+        <div class="test-images effect2"> 
+          <img  id="qst7" src="img/sparetime_7.jpg">
+        </div>
+        <div class="test-images effect2"> 
+          <img  id="qst8" src="img/meet_new8.jpg">
+        </div>
+        <div class="test-images effect2"> 
+          <img  id="qst9" src="img/presentation9.jpg">
+        </div>
+        <div class="test-images effect2"> 
+          <img  id="qst10" src="img/loss10.jpg">
+        </div>
+        <div class="test-images effect2"> 
+          <img  id="qst11" src="img/group11.jpg">
+        </div>
+        <div class="test-images effect2"> 
+          <img  id="qst12" src="img/tour_trip.png">    
+        </div>  
+    </div>
+<!-- test 1 div  -->
+<div class="main-question">
+ <div id="divLoading"> </div>
+ </div>
+ 
+</div>
+
+</body>
+</html>
+<script type="text/javascript">
+
+$(document).ready(function(){
+    $("#divLoading").addClass('show');
+    $('#sidebar').hide();   
+    $('#header').load('header.html');
+});
+
+</script>

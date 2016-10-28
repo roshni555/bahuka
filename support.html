@@ -1,0 +1,40 @@
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="css/index.css">
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<link rel="stylesheet" type="text/css" href="css/jsDatePick_ltr.min.css">
+<script type="text/javascript" src="js/jquer_libs.js"></script>
+<script type="text/javascript" src="js/function.js"></script>
+<script type="text/javascript" src="js/canvas.js"></script>
+<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<script type="text/javascript" src="js/html2canvas.js"></script>
+<script type="text/javascript" src="js/jquery.plugin.html2canvas.js"></script>
+</head>
+<body>
+<div class="freedback_html">
+<div id="main-content">
+<div id="header"> </div> <!-- header.html -->
+<div id="sidebar"></div> <!-- sidemenubar.html -->
+</div>
+<div class="feedback_header"><p>Help Us Support</p></div>
+
+<div id="support-status"></div>
+
+<form method="post" id="support">
+<div class="feedback_emil"><input type="text" name="email" placeholder="Email address" id="email"></div>
+<div class="feedback_stbject"><input type="text" name="subject" placeholder="Subject" id="subject"></div>
+<div class="feedback_textarea"><textarea   rows="6" cols="27" type="text" name="comments" placeholder="Tell us what Happened" id="comments"></textarea></div>
+<div class="feedback_btn"><!-- <a href="https://www.facebook.com/bahuka"><img id="lft-img" src="img/feedbck_facebook.png"></a><a href="https://twitter.com/bahukaapp"><img id="right-img"  src="img/feedback_twitter.png"></a> --></div>
+<div class="feedback_submit_btn"><input type="button" value="Submit" class="StdFinishBtn-pge-e" name="start" onclick="sendSupport();"></div>
+</form>
+</div>
+</body>
+</html>
+<script type="text/javascript">
+$(document).ready(function(){
+    $('#sidebar').hide();   
+    $('#header').load('header.html');
+});
+
+
+</script>
