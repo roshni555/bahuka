@@ -27,7 +27,7 @@ var  userid = localStorage.getItem('loginurid');
 var  localStoragegraphid = localStorage.getItem('graphid');
 
  
-alert(localStoragegraphid);
+alert(userid);
 
 var obj = jQuery.parseJSON( localStoragegraphid);
 
@@ -940,7 +940,7 @@ if(jQuery("#class_id"+csid+"").prop("checked") == true)
  //var dd= jQuery("#chkbox-app"+id2+"").attr('attr');
  //alert(dd);
 //alert("Checkbox is checked.");
-alert("helo");
+//alert("helo");
 var checkedvaluepending="1";
 //alert(checkedvalue);
 
