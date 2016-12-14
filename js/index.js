@@ -68,14 +68,49 @@ window.location.assign("matchingpage1.html");
 
 
 
-
 jQuery(document).ready(function()
 {
+jQuery("#divLoading").addClass('show');
+var formData = {
+task: "getcolleges"
+ };
 
 
+jQuery.ajax({
+    type: "post",
+    url: "http://bahuka.com/home/index.php?option=com_content&view=appcode",
+   data: formData,
+    //  beforeSend: function () { jQuery.mobile.loading('show'); },
+    success: function(response) {
+jQuery("#divLoading").removeClass('show');
+    var obj = jQuery.parseJSON(response);
+
+    var arr = [], obj;
+
+    for(key in obj) {
+    arr.push(key);
+    } 
+    len = arr.length;     
+
+    for(i=1; i<=len;i++)
+    {
 
 
+    var getstringify = JSON.stringify(obj[i]);
+    //console.log(getstringify);
+    var objss = jQuery.parseJSON( getstringify );
+    //console.log(getstringify);
 
+    var collegename = objss.collegename;
+    $('#myselect').append("<option value='"+collegename+"'>"+collegename+"</option>");
+  
+    }
+
+    },
+    error: function () { 
+     // alert("Error");
+    }
+  }); 
 
 
 
@@ -136,7 +171,195 @@ window.location.href="index4.html";
 
  });
 
+jQuery(".student-login-button").click(function(){
 
+var emial=jQuery("#emial").val();
+
+var fistname=jQuery("#first-name").val();
+
+var usrname=jQuery("#user-name").val();
+var myselect = jQuery("#myselect").val();
+ var text = " ";
+
+var charset = "abcdefghijklmnopqrstuvwxyz0123456789";
+for( var i=0; i < 8; i++ )
+
+{
+        text += charset.charAt(Math.floor(Math.random() * charset.length));
+}
+
+
+ if(myselect=="0")
+{
+jQuery("#myselect").focus();
+ jQuery("#myselect").toggleClass('red');
+  return false;
+
+    jQuery("#formLoading").removeClass('show');
+}
+
+
+  if(fistname=="")
+{
+jQuery("#first-name").focus();
+ jQuery("#first-name").toggleClass('red');
+  jQuery("#formLoading").removeClass('show');
+   jQuery(".first-name").show();
+  
+  return false;
+
+}
+else{
+ jQuery(".first-name").hide();
+
+}
+
+ if(emial=="")
+{
+jQuery("#emial").focus();
+ jQuery("#emial").toggleClass('red');
+  jQuery("#formLoading").removeClass('show');
+  jQuery(".campus-email").show();
+  
+  return false;
+}
+else{
+ jQuery(".campus-email").hide();
+
+}
+
+ if(usrname=="")
+{
+  jQuery("#user-name").focus();
+   jQuery("#user-name").toggleClass('red');
+    jQuery("#formLoading").removeClass('show');
+    jQuery(".user-name").show();
+    
+    return false;
+}
+
+else{
+ jQuery(".user-name").hide();
+
+}
+
+var emailRegExp = /^[_a-zA-Z0-9-]+(\.[_a-zA-Z0-9-]+)*@[a-zA-Z0-9-]+(\.[a-zA-Z0-9-]+)*(\.([a-zA-Z]){2,4})$/;
+ if(!emailRegExp.test(jQuery("#emial").val())){  
+ // jQuery("#btl-registration-error").html(btlOpt.MESSAGES.EMAIL_INVALID).show();
+ //alert('Please enter the valid email')
+ jQuery("#emial").toggleClass('red');
+    jQuery("#formLoading").removeClass('show');
+
+  return false;
+ }
+
+else{
+  var collegename1 = jQuery("#myselect").val();
+
+  var task = "varifirequest1";
+
+
+    var varifidata1 = {
+    task: task,
+    emial:emial,
+    collegename:collegename1
+  }; 
+    
+        jQuery.ajax({url: "http://bahuka.com/home/index.php?option=com_content&view=appcode",data:varifidata1, success: function(result){
+//alert(result);
+if(result)
+{
+  //alert(result);
+
+
+    jQuery( ".imgappend" ).html('');
+  
+      if(result==1)
+  {
+
+    var text="Email Already used, Please try different email!";
+  jQuery( ".imgappend" ).append( "<p>"+text+"</p>");
+  jQuery( "#emial" ).val('');
+  jQuery("#emial").focus();
+  jQuery("#emial").toggleClass('red');
+  jQuery("#formLoading").removeClass('show');
+    return false;
+
+  }
+  else if(result == 2){
+    //alert(School Not);
+    var schoolnotfound="Can't find your school.Please Try different email ";
+    jQuery( ".imgappend" ).append( "<p>"+schoolnotfound+"</p>");
+      return false;
+      jQuery("#formLoading").removeClass('show');
+    /*jQuery( ".imgappend" ).append( "<span class='grey_page1'><a id='goto_grey_page' href='javascript:;' onclick='findUserSchool();'> Click Here!</a></span>");*/
+  }
+
+  else{
+    jQuery("#formLoading").addClass('show');
+
+   var pass1 = "";
+    var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+
+    for(var i=0; i < 8; i++)
+    {
+        pass1 += possible.charAt(Math.floor(Math.random()* possible.length));
+    }
+
+
+   var task = "registerstudent";
+
+  var formData = {
+    task: task,
+    emial:emial,
+    firstname: fistname,
+    username: usrname,
+    userpassword: pass1
+  }; 
+  jQuery.ajax({
+    type: "post",
+    url: "http://bahuka.com/home/index.php?option=com_content&view=appcode",
+    data: formData,
+    //  beforeSend: function () { jQuery.mobile.loading('show'); },
+    success: function(response) {
+    var objq = jQuery.parseJSON( response );
+    var userid=objq.userid;
+    
+ localStorage.setItem('loginurid',userid);
+
+ localStorage.setItem('username',usrname);
+      jQuery( ".main-school-div" ).show();
+      jQuery( ".main-school" ).hide();
+var  usernamed = localStorage.getItem('username');
+
+jQuery( "#login-name12" ).val(usernamed);
+    },
+    error: function () { 
+ alert("Error");
+    }
+  });
+ 
+  }
+    }
+
+
+ 
+        }
+
+      });
+
+          
+}
+
+
+
+
+
+ 
+
+
+   
+ }); 
 
  jQuery(".firstpage-next").click(function(){
 
@@ -187,9 +410,123 @@ jQuery("#user-password").toggleClass('red');
   }
    
  }); 
+ jQuery(".login_right").click(function(){
 
+
+var username = jQuery("#login-name12").val();
+var password = jQuery("#login-password12").val();
+
+if(username=="")
+{
+
+ jQuery("#login-name12").focus(); 
+jQuery("#login-name12").toggleClass('red'); 
+}else if(password=="")
+{
+jQuery("#login-password12").focus(); 
+jQuery("#login-password12").toggleClass('red'); 
+}else{
+//alert('userlign');
+
+
+  var task ='userlogin';
+  var username = username;
+  var password =password;
+  
+
+   var formData = {
+    task: task,
+    username: username,
+    password: password,
+   
+  };
+  jQuery.ajax({
+    type: "post",
+    url: "http://bahuka.com/home/index.php?option=com_content&view=appcode",
+    data: formData,
+    //  beforeSend: function () { jQuery.mobile.loading('show'); },
+    success: function(response) 
+    {
+
+//alert(response);
+if(response=="teacher")
+ {
+
+}
+
+else{
+ if(response=="Login Error")
+ {
+  //jQuery("#login-name12").focus().val(''); 
+  jQuery("#login-password12").focus().val(''); 
+  jQuery("#login-password12").toggleClass('red'); 
+  jQuery("#login-name12").toggleClass('red'); 
+  /*jQuery(".error-para").html(''); 
+  jQuery(".error-para").append('Username and Password are incorrect'); */
+}else
+{
+jQuery(".student-login-main").css("display" ,"block");
+jQuery(".main-school-div").css("display" ,"none");
+
+
+
+ }
+
+}
+  },
+    error: function () { 
+      //alert("Error");
+    }
+  }); 
+}
+
+  //alert('hello');
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   
+ }); 
  jQuery(".second-login-right").click(function(){
-   jQuery(".student-login-main").css("display" ,"none");
+   jQuery(".student-login-main,.main-school-div").css("display" ,"none");
     jQuery(".student-login-3.main-page-student").css("display" ,"block");
    
  }); 
@@ -335,12 +672,12 @@ if(result)
   jQuery(".student-login-g6-button").click(function(){
 
 //alert('jas');
-var emial = jQuery("#emial").val();
+/*var emial = jQuery("#emial").val();
 var firstname = jQuery("#first-name").val();
 var username= jQuery("#user-name").val();
 var userpassword= jQuery("#user-password").val();
 var uservarifypassord= jQuery("#user-varifypassord").val();
-
+*/
 
 var jsmajor=  jQuery("#jsmajor").val();
 var jsgraduation= jQuery("#jsgraduation").val();
@@ -359,48 +696,42 @@ var gender=jQuery(".gender").val();
 var interst=jQuery(".append").text();
 
 
-  var task = "registerdata";
-  var emial = emial;
-  var firstname = firstname;
-  var username = username;
-  var userpassword =userpassword;
-  var uservarifypassord=uservarifypassord;
+  var task = "registerdata1";
+var  userId = localStorage.getItem('loginurid');
 
 var major = jsmajor;
-  var jscitytown = jscitytown;
-  var jsgraduation = jsgraduation;
-  var first_go_college =first_go_college;
-  var military_or_veteran=military_or_veteran;
+var jscitytown = jscitytown;
+var jsgraduation = jsgraduation;
+var first_go_college =first_go_college;
+var military_or_veteran=military_or_veteran;
 
- var gender=gender;
-  var jsstate=jsstate;
+var gender=gender;
+var jsstate=jsstate;
 
-  var interst=interst;
-  var jsbirthdate=jsbirthdate;
+var interst=interst;
+var jsbirthdate=jsbirthdate;
 
 
 
-  
+
 
 
   var formData = {
     task: task,
-    emial:emial,
-    firstname: firstname,
-    username: username,
-    userpassword: userpassword,
-    uservarifypassord: uservarifypassord,
-    major: jsmajor,
-    jsgraduation: jsgraduation,
-    first_go_college: first_go_college,
-    military_or_veteran: military_or_veteran,
-    jsbiotext:jsbiotext,
-    gender:gender,
-    interst:interst,
-    jsbirthdate:jsbirthdate,
-  jscitytown:jscitytown,
-  jsstate:jsstate,
-  jscountry:jscountry
+    
+major: jsmajor,
+jsgraduation: jsgraduation,
+first_go_college: first_go_college,
+military_or_veteran: military_or_veteran,
+jsbiotext:jsbiotext,
+gender:gender,
+userId:userId,
+interst:interst,
+jsbirthdate:jsbirthdate,
+jscitytown:jscitytown,
+jsstate:jsstate,
+jscountry:jscountry
+
 
   }; 
   jQuery.ajax({
@@ -409,16 +740,10 @@ var major = jsmajor;
     data: formData,
     //  beforeSend: function () { jQuery.mobile.loading('show'); },
     success: function(response) {
-        jQuery(".lofin-conformation-msg").html('');
-      var data="<p>Please check your email and follow the link to verify your account.</p>";
-      jQuery(".lofin-conformation-msg").append(data);
-
-
-
-
-   var myVar = setInterval(myTimer, 1700);
+  
+var myVar = setInterval(myTimer, 1700);
 function myTimer() {
- window.location.href="verify.html";
+window.location.href="matchingpage1.html";
 }
 
       //alert("Record saved successfully..!!");
@@ -457,7 +782,7 @@ jQuery(".click-female-image").click(function(){
 
 /*  userlogin function start  */
 
-jQuery(".login_next").click(function(){  
+jQuery(".login_next,.login_float").click(function(){  
 var username = jQuery("#login-name12").val();
 var password = jQuery("#login-password12").val();
 
@@ -498,15 +823,18 @@ if(response=="teacher")
  {
 
 window.location.href="teacher-login.html";
+return false;
 }
 
 else{
  if(response=="Login Error")
  {
+  
   jQuery("#login-name12").focus().val(''); 
   jQuery("#login-password12").focus().val(''); 
   jQuery("#login-password12").toggleClass('red'); 
   jQuery("#login-name12").toggleClass('red'); 
+  return false;
   /*jQuery(".error-para").html(''); 
   jQuery(".error-para").append('Username and Password are incorrect'); */
 }else

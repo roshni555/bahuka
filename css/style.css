@@ -518,7 +518,7 @@ border-radius: 20px;
 .logo_2text {
 text-align: center;
 }
-.login_next
+.login_nexts
 {
 color: #fff;
 float: right;
@@ -528,7 +528,16 @@ position: relative;
 right: 3%;
 }
 
-
+.login_next {
+    background-color: #207ea9;
+    border: 1px solid #207ea9;
+    border-radius: 6px;
+    color: #fff;
+    font: 19px/1.4em din-next-w01-light,din-next-w02-light,din-next-w10-light,sans-serif;
+    margin: 11px auto;
+    position: relative;
+    width: 32%;
+}
 
 /* login css */
 
@@ -539,29 +548,50 @@ margin:0;
 padding: 0;
 
 }
+.main-school-div{
+
+margin:0;
+padding: 0;
+
+}
 .main-school .our-school {
 float: left;
 width: 100%;
 }
-.main-school .heading{
+.main-school .heading,.main-school-div .heading{
 width:100%;
 float: left;
 }
-.main-school .heading h1 {
-color: #fff;
-font-family: reklamescriptw00-medium,cursive;
-font-size: 30px;
-font-style: italic;
-font-weight: bold;
-margin-top: 10%;
-padding: 0 16px;
-text-align: center;
+
+.main-school .heading h1 
+
+{
+
+   font-family: lucida handwriting; 
+    font-style: italic;
+    font-weight: bold;
+}
+.main-school .heading h1,.main-school-div .heading h1 {
+    color: #fff;
+    font-size: 30px;
+    
+    margin-top: 6%;
+    padding: 0 16px;
+    text-align: center;
+}
+
+.main-school-div .heading.underline h1 {
+    border-bottom: 3px solid white;
+    color: red;
+    margin: 0 auto;
+    width: 41%;
+     font-family: "Times New Roman";
 }
 .main-school .form-in {
-float: left;
-text-align: center;
-width: 100%;
-margin-bottom: 1px;
+    float: left;
+    margin-bottom: 7px;
+    text-align: center;
+    width: 100%;
 }
 
 
@@ -571,13 +601,14 @@ border: 1px solid rgba(160, 160, 159, 1);
 border-radius: 5px;
 bottom: 0;
 box-shadow: 0 1px 4px rgba(0, 0, 0, 0.6);
-font: 19px/1em fantasy;
-height: 34px;
+
+height: 29px;
 padding: 4px 10px 4px 10px;
 width: 82%;
 margin-top: 7%;
 color: #605e5e;
-font: 25px/1.4em din-next-w01-light,din-next-w02-light,din-next-w10-light,sans-serif;
+font-size: 16px;
+font-family:caption;
 }
 .main-school .verification {
 float: left;
@@ -787,11 +818,13 @@ margin: 8px auto;
 
 }
 
-.main-school {
+.main-school,.main-school-div {
 background-color: #3d9be9;
 float:left;
 height: 100%;
+color: white;
 overflow: auto;
+width:100%;
 }
 .main-school-second-page
 {
@@ -801,7 +834,50 @@ display:none;
 overflow: auto;
 }
 
+.main-school-div .form-in-div {
+    float: left;
+    margin-top: 6%;
+    width: 100%;
+}
 
+
+.underline-input {
+  
+    border-bottom: 2px solid white;
+    margin: 0 auto;
+
+   
+    width: 54%;
+}
+
+
+
+.underline-input input {
+    border: medium none;
+    color: red;
+    font-size: 27px;
+    text-align: center;
+    width: 100%;
+}
+
+.heading.password input {
+    background-color: white;
+    border: 1px solid gray;
+    border-radius: 2px;
+    padding: 4px 26px;
+    text-align: center;
+}
+.form-in-div .text-paragraph {
+    margin: 0 auto;
+    text-align: center;
+    width: 91%;
+}
+
+.main-school-div h4 {
+  
+    text-align: center;
+    width: 100%;
+}
 .main-school-second-page .header-text2 h1 {
 color: #fff;
 font-family: reklamescriptw00-medium,cursive;
@@ -946,32 +1022,32 @@ float: left;
 text-align: center;
 width: 100%;
 }
-.form-in > input {
- background: #f2f2f2 none repeat scroll 0 0;
+.form-in input {
+    background: #f2f2f2 none repeat scroll 0 0;
     border: 1px solid #a0a09f;
     border-radius: 5px;
     bottom: 0;
     box-shadow: 0 1px 4px rgba(0, 0, 0, 0.6);
     color: #a0a09f;
-    font: lighter 26px/1em fantasy;
+    font: lighter 16px/1em caption;
     height: 34px;
     margin-top: 8%;
     padding: 0 2px 5px 8px;
     width: 82%;
 }
+
 .form-in select {
-background: #f2f2f2 url("image/bottom-arrow.png") no-repeat scroll right center / 10% 54%;
-border: 1px solid #f2f2f2;
-border-radius: 5px;
-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.6);
-font: 19px/1em fantasy;
-margin-top: 8%;
-padding: 0 8px 0 6px;
-width: 85%;
-color: #bdbdbc;
-font: lighter 26px/1em fantasy;
-
-
+    background: #e8e8e8 none repeat scroll 0 0;
+    border: 1px solid #f2f2f2;
+    border-radius: 5px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.6);
+    color: #bdbdbc;
+    font-family: caption;
+    font-size: 16px;
+    height: 35px;
+    margin-top: 8%;
+    padding: 4px 10px;
+    width: 88%;
 }
 .arrow {
 float: left;
@@ -1060,6 +1136,8 @@ font: 19px/1em fantasy;
 height: 28px;
 padding: 4px 2px 3px 9px;
 width: 82%;
+font-size:16px;
+font-family: caption;
 }
 .student-login-3 .form-in select {
 background: #e8e8e8 url("img/bottom-arrow.png") no-repeat scroll right center / 10% 54%;
@@ -1197,7 +1275,7 @@ border: 1px solid red !important;
 /*border:1px solid #3D9BE9;
 height: 24px;
 overflow: auto;*/
-text-align: center; 
+text-align: center;	
  float: left;
     margin: 3% 0;
    
@@ -1216,7 +1294,7 @@ margin: 0;
 .imgappend2 {
    
     float: left;
-    margin: 2% 0px;
+  	margin: 2% 0px;
     overflow: auto;
     text-align: center;
     width: 100%;
@@ -2205,14 +2283,14 @@ padding-right: 14px;
 }
  .professercls
  {
-    margin: 0px;
+ 	margin: 0px;
  }
  .techer_listpage
  {
 
-    width:100%;
-    margin:0 auto;
-      text-align: center;
+ 	width:100%;
+ 	margin:0 auto;
+ 	  text-align: center;
  }
 .techer_listpage input.StdFinishBtn-pge
 {
@@ -2262,7 +2340,7 @@ width: 50%;
 .view-detail-thrk
 {
 
-      border: 3px solid rgba(61, 155, 233, 1);
+	  border: 3px solid rgba(61, 155, 233, 1);
     border-radius: 10px;
     bottom: 0;
     color: #3d9be9;
@@ -2387,6 +2465,22 @@ margin: 0 10px;
     position: fixed;
     right: 0;
     top: 0;
+    z-index: 100;
+}
+ 
+#formLoading.show
+{
+      background-image: url("../img/loader-image.gif");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 13% auto;
+    bottom: 0;
+    display: block;
+    left: 0;
+    opacity: 0.4;
+    position: fixed;
+    right: 0;
+    top: 256px;
     z-index: 100;
 }
 
@@ -2623,7 +2717,7 @@ float:left;
     float: left;
     font-family: reklamescriptw00-medium,cursive;
     font-size: 34px;
-    margin: 0 0 0 25px; 
+    margin: 0 0 0 25px;	
 }
 
 .teacher-listing-page img {
@@ -3048,7 +3142,7 @@ text-align: center;
 /* box-shadow */
 
 .test-images > img{
-    width:95%;
+	width:95%;
     border: 6px solid #ffffff;
     box-shadow: 0 0 5px -1px #000000;
 }
@@ -3497,10 +3591,10 @@ button {
 .possible-nme-best {
     float: right;
     width: 49%;
-     
+	 
 }
 .possible-nme-best >p{
-     color: #207ea9;
+	 color: #207ea9;
      font-size: 20px;
 }
 .possible-nme-best input{
@@ -5778,4 +5872,177 @@ margin: 0.8% 0;
     float: left;
     margin: 0;
     width: 17%;
+}
+.disclaimer_div {
+    background: #0070c0 none repeat scroll 0 0;
+    width: 100%;
+     float: left;
+     height:92.7vh;
+}
+
+.disclaimer_div .red_image {
+    text-align: center;
+    width: 100%;
+}
+.monkey_image {
+    margin-top: -81px;
+    width: 19%;
+     float: left;
+}
+.monkey_image img {
+    margin: 0 auto;
+}
+.disclaimer_text {
+    font-family: "Times New Roman";
+  
+    margin: 0 auto;
+    text-align: center;
+    width: 65%;
+}
+
+.disclaimer_text.offical {
+    width: 100%;
+}
+.disclaimer_div h2 {
+    color: white;
+    line-height: 144%;
+   
+}
+
+
+.disclaimer_text p {
+    color: white;
+    font-size: 17px;
+    margin-top: 7%;
+}
+
+.disclaimer_text span {
+    color: white;
+    font-size: 13px;
+}
+.disclaimer_text.disclimer_span {
+    margin-top: 10%;
+}
+
+.continue {
+    
+    margin: 7% auto;
+    width: 39%;
+}
+
+.continue a {
+
+  
+    text-decoration: none;
+
+}
+.red_image img{
+
+
+    margin:0;
+}
+.continue input {
+    background-color: gray;
+    border: 1px solid gray;
+    border-radius: 11px;
+    color: white;
+    padding: 14px;
+    width: 100%;
+}
+.support_disclaimer {
+    color: white;
+    margin: 0 auto 9px;
+    text-align: center;
+    width: 50%;
+}
+.support_disclaimer  a {
+    color: white;
+}
+
+.choose-div {
+    color: #fff;
+    float: left;
+margin-bottom: 7%;
+    margin-top: 6%;
+    text-align: center;
+    width: 100%;
+}
+
+
+.student-login-button {
+    background: gray none repeat scroll 0 0;
+    border: 1px solid white;
+    border-radius: 18px;
+ 
+    margin: 5% auto 0;
+    overflow: auto;
+    padding: 9px 9px 16px;
+    text-align: center;
+    width: 29%;
+}
+
+.student-login-button > a {
+    color: #fff;
+    text-decoration: none;
+}
+
+
+.main-school .form-img {
+    float: left;
+    margin-bottom: 0;
+    text-align: center;
+    width: 100%;
+}
+
+.form-img img {
+    margin-bottom: -33px;
+    margin-top:0;
+}
+
+.image-center {
+    text-align: center;
+    width: 100%;
+}
+
+
+.image-center img {
+    filter: brightness(120%);
+    margin: 0;
+    opacity: 1;
+    width: 40%;
+}
+
+.text-jump {
+    font-family: calibery;
+    font-size: 15px;
+    margin: 0 auto;
+    text-align: center;
+    width: 83%;
+}
+.login_float,.login_right {
+    background-color: navy;
+    border: 2px solid white;
+    border-radius: 6px;
+   
+    margin: 0 auto;
+    padding: 9px 11px;
+    text-align: center;
+    width: 30%;
+}
+.login_float
+{
+     float: left;
+}
+.login_right
+{
+     float: right;
+}
+
+.main-school-div .form2 {
+    margin: 1% auto 0;
+    width: 90%;
+}
+
+.heading.underline {
+    margin-top: 5%;
 }

@@ -1,0 +1,87 @@
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="css/index.css">
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<link rel="stylesheet" type="text/css" href="css/jsDatePick_ltr.min.css">
+<script type="text/javascript" src="js/jquer_libs.js"></script>
+<script type="text/javascript" src="js/function.js"></script>
+<script type="text/javascript" src="js/canvas.js"></script>
+<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<script type="text/javascript" src="js/html2canvas.js"></script>
+<script type="text/javascript" src="js/jquery.plugin.html2canvas.js"></script>
+</head>
+<body>
+<div class="freedback_html">
+<div id="main-content">
+<div id="header"> </div> <!-- header.html -->
+<div id="sidebar"></div> <!-- sidemenubar.html -->
+</div>
+<div class="disclaimer_div">
+<form method="post">
+
+<div class="red_image">
+
+<img src="http://bahuka.com/home/images/red_circle.png">
+</div>
+<div class="monkey_image">
+
+<img src="http://bahuka.com/home/images/disclaimer_monkey.png">
+</div>
+<div class="disclaimer_text offical">
+	
+
+	<h2>Bahuka is not an offical Registration Site</h2>
+</div>
+<div class="disclaimer_text">
+	
+
+	<p>Please Remember to Register on school Site.</p>
+</div>
+
+<div class="disclaimer_text">
+	
+
+	<p>Your <b>Teacher list</b> hold all info you need.</p>
+</div>
+<div class="disclaimer_text disclimer_span">
+	 <div class="check" style="display:none;color:red;"> Please check the checkbox to continue</div>
+<span>Check the box if you Understand</span>
+<input type="checkbox" name="understand" value="1" id="underst">
+</div>
+<div class="continue">
+
+<a href="#" id="anchorid"><input type="button" value="Continue"  onclick="checkedddd(this);"></a>
+</div>
+<div class="support_disclaimer">
+<a href="">support</a>
+</div>
+</form>
+<!-- <div id="divLoading"> 
+    </div> -->
+</div>
+</body>
+</html>
+<script type="text/javascript">
+$(document).ready(function(){
+	 $("#divLoading").addClass('show');
+    $('#sidebar').hide();   
+    $('#header').load('header.html');
+});
+function checkedddd(fgfg)
+{
+
+
+	if(!$("#underst").is(':checked'))
+	{
+            $(".check").show();
+           $('#anchorid').attr('href','#');
+
+	}
+        else
+        {
+         $(".check").hide();
+         $('#anchorid').attr('href','student-test1.html');
+        }
+}
+
+</script>

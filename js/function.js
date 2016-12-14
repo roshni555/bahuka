@@ -27,7 +27,7 @@ var  userid = localStorage.getItem('loginurid');
 var  localStoragegraphid = localStorage.getItem('graphid');
 
  
-//alert(localStoragegraphid);
+alert(localStoragegraphid);
 
 var obj = jQuery.parseJSON( localStoragegraphid);
 
@@ -118,7 +118,7 @@ if(stusertype==1){
 else{
   st="Professor";
 }
-  if(avatar=="")
+  if(avatar==""||avatar==null)
 {
   var imgd ="http://bahuka.com/home/images/no-image-found.png";
 img=imgd; 
@@ -420,6 +420,9 @@ localStorage.setItem('ctrlsfs',ctrlsf);
 function geteacher1(geteacher,csidww)
  {
  // jQuery('#possible_'+csid).animate({scrollTop:0}, 'slow');
+
+
+
 
 jQuery('.back,.back2,.backa,.back4,.backa6,.back10').hide();
   var task = "bestmatching";
@@ -1690,7 +1693,14 @@ questionid:  userid,
   localStorage.setItem('graphid',response);
 
   var obj = jQuery.parseJSON( response );
- window.location.href="student-result-page.html";
+
+
+/*
+var myVar = setInterval(myTimer, 1700);
+function myTimer() {
+window.location.href="student-result-page.html";
+}*/
+window.location.href="student-result-page.html";
      //var graphgernate="successfullyd";
 
 
@@ -2274,6 +2284,8 @@ collabcclz : collabcclz,
 stusertype=objsp.stusertype;
 profilelike=objsp.profilelike;
 collegename=objsp.collegename;
+
+
 if(stusertype==1){
 
   st="Student";
@@ -3734,7 +3746,7 @@ var profilestatus=objsswsrc.profilestatus;
 //alert(avatarsrc);
 
 var img='http://bahuka.com/home/'+avatarsrc;
-  if(avatarsrc=="")
+  if(avatarsrc==""||avatarsrc==null)
 {
   var imgd ="http://bahuka.com/home/images/no-image-found.png";
 img=imgd; 
@@ -6029,6 +6041,12 @@ function notifications(){
              if(actor!=null){
           notificationdiv += "<div  class='notification_center' onclick='getgroupwallnoti("+userid+");'><ul class='notific_lists'><li><div class=list_notific_details><div  class='notification_text'><h1><span id='notic_nmber'> "+actor+ "</span>  created a new <span id='notic_action'>"+groupss+"</span> photos album in the <span id='notic_action'> "+groupss+"</span> class. </h1><p> "+time+" </p> </div></div></li></ul></div>";
         }
+}
+        else if(cmd_type == 'notif_system_messaging')
+      {
+            
+          notificationdiv += "<div  class='notification_center'><ul class='notific_lists'><li><div class=list_notific_details><div  class='notification_text'><h1> <span id='notic_nmber'>Thank you for Registering on Bahuka</span> </h1><p> "+time+" </p> </div></div></li></ul></div>";
+        
       }
 
 
@@ -6065,7 +6083,7 @@ else{
   
 }
 
-window.setInterval(function () {
+/*window.setInterval(function () {
     countnoti();
 },  1000);
 
@@ -6093,7 +6111,7 @@ var countnoti = function() {
         }
     });
 }
-
+*/
 
 /*function notificationcount(){
 
