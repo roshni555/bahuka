@@ -277,8 +277,8 @@ if(result)
       if(result==1)
   {
 
-    var text="Email Already used, Please try different email!";
-  jQuery( ".imgappend" ).append( "<p>"+text+"</p>");
+   // var text="Email Already used, Please try different email!";
+  jQuery( ".email-append" ).show();
   jQuery( "#emial" ).val('');
   jQuery("#emial").focus();
   jQuery("#emial").toggleClass('red');
@@ -287,6 +287,8 @@ if(result)
 
   }
   else if(result == 2){
+
+     jQuery( ".email-append" ).hide();
     //alert(School Not);
     var schoolnotfound="Can't find your school.Please Try different email ";
     jQuery( ".imgappend" ).append( "<p>"+schoolnotfound+"</p>");
@@ -296,6 +298,9 @@ if(result)
   }
 
   else{
+
+
+    jQuery( ".email-append" ).hide();
     jQuery("#formLoading").addClass('show');
 
    var pass1 = "";
@@ -325,7 +330,7 @@ if(result)
     var objq = jQuery.parseJSON( response );
     var userid=objq.userid;
     
- localStorage.setItem('loginurid',userid);
+ //localStorage.setItem('loginurid',userid);
 
  localStorage.setItem('username',usrname);
       jQuery( ".main-school-div" ).show();

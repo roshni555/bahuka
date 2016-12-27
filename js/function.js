@@ -23,50 +23,15 @@ pushNotification.register(
 
 function jas()
 {
+
 var  userid = localStorage.getItem('loginurid');
-var  localStoragegraphid = localStorage.getItem('graphid');
+var  test = localStorage.getItem('graphid');
+
+
+var objk = jQuery.parseJSON( test);
 
  
-alert(userid);
-
-var obj = jQuery.parseJSON( localStoragegraphid);
-
  
-  var chart = new CanvasJS.Chart("chartContainer",
-  {
-    title:{
-      text: "",
-      fontFamily: "arial black"
-    },
-                animationEnabled: true,
-    legend: {
-      verticalAlign: "bottom",
-      horizontalAlign: "center"
-    },
-    theme: "theme1",
-    data: [
-    {        
-      type: "pie",
-      indexLabelFontFamily: "Garamond",       
-      indexLabelFontSize: 12,
-      indexLabelFontWeight: "bold",
-      startAngle:0,
-      indexLabelFontColor: "MistyRose",       
-      indexLabelLineColor: "darkgrey", 
-      indexLabelPlacement: "inside", 
-      toolTipContent: "{name}: {y}%",
-      showInLegend: true,
-      indexLabel: "#percent%", 
-      dataPoints: [
-        {  y: obj.auditory, name: " ", legendMarkerType: "circle"},
-        {  y: obj.visual, name: " ", legendMarkerType: "circle"},
-        {  y: obj.kinesthetic, name: " ", legendMarkerType: "circle"},
-        {  y: obj.textual, name: " ", legendMarkerType: "circle"}
-      ]
-    }
-    ]
-  });
-  chart.render();
 
 var task = "getuser";
   var userid = userid;
@@ -131,6 +96,47 @@ else
 
    var profile="<div class='student-result-page01'><div class='student-result-img1'><img src='"+img+"'></img><div class='student-rslt-txt'><p class='Student-name-txt'>"+name+"</p><p>"+st+", "+collegename+"</p></div>";
  jQuery('.student-result').append(profile);
+
+ var chart = new CanvasJS.Chart("chartContainer",
+  {
+    title:{
+      text: "",
+      fontFamily: "arial black"
+    },
+                animationEnabled: true,
+    legend: {
+      verticalAlign: "bottom",
+      horizontalAlign: "center"
+    },
+    theme: "theme1",
+    data: [
+    {        
+      type: "pie",
+      indexLabelFontFamily: "Garamond",       
+      indexLabelFontSize: 12,
+      indexLabelFontWeight: "bold",
+      startAngle:0,
+      indexLabelFontColor: "MistyRose",       
+      indexLabelLineColor: "darkgrey", 
+      indexLabelPlacement: "inside", 
+      toolTipContent: "{name}: {y}%",
+      showInLegend: true,
+      indexLabel: "#percent%", 
+      dataPoints: [
+        {  y: objs.auditory, name: " ",indexLabel: objs.auditory+"%"},
+        {  y: objs.visual, name: " ",indexLabel: objs.visual+"%"},
+        {  y: objs.kinesthetic, name: " ", indexLabel: objs.kinesthetic+"%"},
+        {  y: objs.textual, name: " ", indexLabel: objs.textual+"%"}
+      ]
+    }
+    ]
+  });
+  chart.render();
+
+
+
+
+
 
 
     },
@@ -940,7 +946,7 @@ if(jQuery("#class_id"+csid+"").prop("checked") == true)
  //var dd= jQuery("#chkbox-app"+id2+"").attr('attr');
  //alert(dd);
 //alert("Checkbox is checked.");
-//alert("helo");
+
 var checkedvaluepending="1";
 //alert(checkedvalue);
 
@@ -3681,7 +3687,6 @@ jQuery(".search-post-append").after("<div class='back9'  onclick='history.back()
 
 
 
-
 function scorehistory()
 {
   var  userid = localStorage.getItem('loginurid');
@@ -3700,6 +3705,8 @@ useridscore: useridscore,
     //  beforeSend: function () { jQuery.mobile.loading('show'); },
     success: function(responsesdsrc) 
     {
+
+
       jQuery('#student-score-pges').html('');
 
     //alert("secessfull");
@@ -3755,7 +3762,7 @@ img=imgd;
 
 if(profilestatus)
 {
-  rasrc1="<div class='pri-src-page'><div class='prifile-src-img'><img src='"+img+"'></div><div class='profile-src-name'>"+namepro+" <br /><span style='color:#605e5e;'> student,"+college+"</span></div></div>";
+  rasrc1="<div class='pri-src-page'><div class='prifile-src-img'><img src='"+img+"'></div><div class='profile-src-name'>"+namepro+" <br /><span style='color:#605e5e;'> student,"+college+"</span></div></div><div class='tab-main-score'><ul class='tab'><li><a href='javascript:void(0)' class='tablinks' onclick='openCity(event,"+'"load-score"'+")'>Learning Scores</a></li><li><a href='javascript:void(0)' class='tablinks' onclick='openCity(event, "+'"ratings"'+")' >Ratings</a></li><li><a href='javascript:void(0)' class='tablinks' onclick='openCity(event,"+'"questions"'+")'>Questions</a></li></ul></div><div class='load-score'></div>";
  }
  else
  {
@@ -3768,17 +3775,17 @@ rasrc1="";
 //alert(usernamep);
 if(created_datea==undefined ||created_dateb==undefined){
 
-   dates="<div class='student-class-button-pge'><p>No Score History found</p></div>";
+   dates="<div class='student-class-button-pge'><p class='no-score-p'>No Score History to display</p><div class='image-no-rating'><img src='http://bahuka.com/home/images/no-rating.png'></div></div>";
 }
 else{
 
 
-  dates="<div class='score-div-page' id="+answereid+"><div class='score-left'><div class='score-text'>"+created_datea+" <br> at "+created_dateb+"</div><div class='score-img'><img src='img/red-minus-th.png' onclick='deletescore("+answereid+");'> </div></div><div class='score-right'><div id='chartContainer_"+rasrc+"' class='containdercss'></div></div></div";
+  dates="<div class='score-div-page' id="+answereid+"><div class='score-left'><div class='score-text'>"+created_datea+" <br> at "+created_dateb+"</div><div class='score-img'><img src='img/red-minus-th.png' onclick='deletescore("+answereid+");'> </div></div><div class='score-right'><div id='chartContainer_"+rasrc+"' class='containdercss'></div></div></div></div>";
 }
 //http://bahuka.com/home/images/avatar/thumb_53a1c4a6d21f680e77589992.jpg
-datagu = ""+rasrc1+""+dates;
-
-jQuery('#student-score-pges').append(datagu);
+/*datagu = ""+rasrc1+""+dates;*/
+jQuery('#student-score-pges').append(rasrc1);
+jQuery('#load-score').append(dates);
 
 /*  chart container start */
  //var obj = jQuery.parseJSON( localStoragegraphid);
@@ -3839,7 +3846,9 @@ jQuery('#student-score-pges').append(datagu);
 
  jQuery(".search-post-append").after("<div class='back16' onclick='history.back();'>Back</div>");
 
- 
+        openratingdiv();
+
+        openratingquestion();
     },
     error: function () 
     { 
@@ -6111,8 +6120,8 @@ var countnoti = function() {
         }
     });
 }
-*/
 
+*/
 /*function notificationcount(){
 
 
@@ -7681,7 +7690,7 @@ $("#imageLoading").addClass('show');
         }
  
         function fail(error) {
-            alert("An error has occurred: Code = "+ error.code);
+           // alert("An error has occurred: Code = "+ error.code);
         }
 
 
@@ -8558,35 +8567,1143 @@ task: task
 
 
 }
+function viewprfl1new(id)
+{
+
+userid=id ? id : localStorage.getItem('loginurid');
+
+  var collabcclz = localStorage.getItem('collabc');
+  var  puserid=localStorage.getItem('loginurid');
+//alert(collabcclz);
+/*  ajax hit question save value */
+var task ='viewprofl';
+var useridpr = userid;
+var collabcclz=collabcclz;
+var formData = {
+task: task,
+useridpr:   useridpr,
+viewlogin:puserid,
+collabcclz : collabcclz,
+ };
+  jQuery.ajax({
+    type: "post",
+    url: "http://bahuka.com/home/index.php?option=com_content&view=appcode",
+    data: formData,
+    //  beforeSend: function () { jQuery.mobile.loading('show'); },
+    success: function(responseprz) 
+    {
+      jQuery('#header .search-post').html('');
+
+    jQuery("#student-class-group-pge").html('');
+    //alert(responseprz);
+    var objsp = jQuery.parseJSON( responseprz );
+    var getstprs= JSON.stringify(objsp[1]);
+    var objsp = jQuery.parseJSON( getstprs );
+
+    //console.log(getstprs);
+    useridpr=objsp.useridpr;
+    username=objsp.usrname;
+    //alert(username);
+    useremail=objsp.usremail;
+    thumb=objsp.thumb;
+     cover=objsp.cover;
+    Auditory=objsp.Auditory;
+    Visual=objsp.Visual;
+    Kinesthetic=objsp.Kinesthetic;
+    Textual=objsp.Textual;
+stusertype=objsp.stusertype;
+profilelike=objsp.profilelike;
+collegename=objsp.collegename;
+if(stusertype==1){
+
+  st="Student";
+}
+else{
+  st="Professor";
+}
+    clznme=objsp.clznme;
+
+    clzyres=objsp.clzyres;
+
+    textreslts=objsp.textreslts;
+    majorreslts=objsp.majorreslts;
+    cityreslts=objsp.cityreslts;
+    statereslts=objsp.statereslts;
+    countryreslts=objsp.countryreslts;
+like=objsp.like;
+  var covers='http://bahuka.com/home/'+cover;
+   if(cover==""||cover==null)
+  {
+    var coverd ="img/7040469-lake-mountains-woods.jpg";
+  covers=coverd; 
+
+  }
+  var img='http://bahuka.com/home/'+thumb;
+   if(thumb==""||thumb==null)
+  {
+    var imgd ="http://bahuka.com/home/images/no-image-found.png";
+  img=imgd; 
+
+  }
+  var url="http://bahuka.com/home/images";  
+  localxd = localStorage.getItem('ctrlsfs');
+ // alert(textreslts);
+ 
+  //alert(collabcclz); 
+  //alert(clzyres);
+   if(clzyres || textreslts || majorreslts || clznme)
+  { }
+  else
+  {clzyres  = "" ;
+   textreslts  = "";
+    majorreslts  = "";
+    clznme= "";
+  } 
+  if(cityreslts && statereslts && countryreslts ){
+
+
+   var result = countryreslts.split('_');
+    var userfrom = "From " +cityreslts +", " + statereslts + ", " +countryreslts;
+  }
+  else{
+    var userfrom ="";
+  }
+
+  var tt="";
+if (textreslts==null||majorreslts==null||userfrom==null){
+
+
+  tt="";
+}
+else{
+ tt= "<div class='profess_dtl_prf'><p>"+textreslts+"</p><p>"+majorreslts+"</p><p>"+userfrom+"</p></div>";
+}
+
+if(profilelike>0){
+
+var span="<span  onclick='profilelikess("+userid+","+puserid+",this);' class='profilelike'>Liked</span>";
+}
+else{
+
+ span="<span  onclick='profilelikess("+userid+","+puserid+",this);'  class='profilelike'>Like</span>";
+}
+  first="<!--div class='proimg_top'><img id='pro_l_img' src='img/pro_l_img.png'><p id='return_top_txt'>Return To Results</p><img id='pro_r_img' src='img/tepro_r_img.png'></div--><div class='thr_prifile_page'><div class='thr_prifile_banner'><img src='"+covers+"'></div></div><div class='sin_pfl_dtl'><div class='best-match-page'><div class='best-match-pro'><div class=best-tchr-image><img src='"+img+"'></div></div><div class='best-match-text'><div class='chrt_sml'><div id='chartContainer_1s'></div></div></div></div><div class='bottom-colmk'><div class='Uer_profile_dtl'><div class='thr-nme-bestk'>"+username+"<br><span>"+st+", "+collegename+"</span></div></div></div></div><div class='aboutme_main_container'><div class='about_me_profile'><div class='tab-main-score'><ul class='tab'><li><a href='javascript:void(0)' class='tablinks' onclick='openCity(event,"+'"reports"'+")'>Reports</a></li><li><a href='javascript:void(0)' class='tablinks' onclick='openCity(event, "+'"about"'+")'>About</a></li></ul><div class='like-me'><div class='button-like'>3</div><div class=img-like><img src='img/fb-new.png'></div></div></div><div class='about_center_div tabcontent' id='about' style='display:block;'><div class='about-top-part'><div class='about_dtl'><p class='about_txt bottm-line'><span class='about-div'>About Me</span><span class='imgspans'><img src='img/fblike.png'></span>"+span+"<span class='blue-like2'>"+like+"</span></p></div>"+tt+"</div><div class='email-bottom-part'><div class='about_email'><p id='top_line'></p><p class='about_emaildtl'><img src='img/emailltr.png'> "+useremail+"</p></div></div></div><div id='reports' class='tabcontent'></div></div></div></div></div></div></div><div class='profil-group-div'><div class='group_dtl'><p class='group-text'>Class Groups</p></div><div id='student-clases-groups' class='student-clases-groups'></div>";
+
+  jQuery("#student-class-group-pge").append(first);
+
+   var chart = new CanvasJS.Chart("chartContainer_1s",
+    {
+      
+        data: [
+        {    
+        indexLabelFontSize: 12,   
+          
+            indexLabelFontWeight: "normal",
+            startAngle:0,
+            indexLabelFontColor: "MistyRose",       
+            indexLabelLineColor: "darkgrey", 
+            indexLabelPlacement: "inside", 
+            toolTipContent: "{name}: {y}hrs",
+            showInLegend: true,
+            indexLabel: "#percent%",
+            type: "pie",
+            showInLegend: false,
+            toolTipContent: "{legendText}: <strong>{y}%</strong>",
+            indexLabel: "{y}%",
+            dataPoints: [
+                {  y: Auditory, legendText: "", label: "" },
+                {  y: Visual, legendText: "", label: "" },
+                {  y: Kinesthetic, legendText: "", label: "" },
+                {  y: Textual, legendText: "", label: ""}
+
+            ]
+    }
+    ]
+    });
+    chart.render(); 
+
+     ratings(userid);
+    getgroups1(userid);
+   
+
+      // jQuery(".search-post-append").after("<div class='back7' onclick='history.back();'>Back</div>");
+  },
+
+
+
+
+    error: function () 
+    { 
+      //alert("Error");
+    }
+  }); 
+
+
+
+}
+function openCity(evt, cityName) {
+
+
+
+
+    var i, tabcontent, tablinks;
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+    }
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+    document.getElementById(cityName).style.display = "block";
+    evt.currentTarget.className += " active";
+}
+
+function ratings()
+{
+userid= localStorage.getItem('loginurid');
+/*  ajax hit question save value */
+var task ='viewrating';
+var useridpr = userid;
+var formData = {
+task: task,
+useridpr:   useridpr
+ };
+
+
+
+
+
+
+  jQuery.ajax({
+    type: "post",
+    url: "http://bahuka.com/home/dev/index.php?option=com_content&view=appcode",
+    data: formData,
+   
+
+    success: function(responseprz) 
+    {
+   
+    var obj = jQuery.parseJSON( responseprz );
+
+//for()
+  var arr = [], obj;
+
+for(key in obj) {
+    arr.push(key);
+} 
+
+  /*jQuery('.student-result').html('');*/
+
+len = arr.length;
+
+console.log(len) //2*/
+ //divdata="";
+//  jQuery('#student-clases-added').html('');
+  var p=1;
+  var classdata="";
+ var classdata1="";
+var text="";
+  for(i=1; i<=len;i++)
+  {
+    var ing="";
+
+var getstringify = JSON.stringify(obj[i]);
+//console.log(getstringify);
+var objs = jQuery.parseJSON( getstringify );
+var classname = objs.classname;
+var startdate = objs.startdate;
+var feedbacrating = objs.feedbackrating;
+var scid = objs.scid;
+text+="<p class='date-text"+i+"'  style='display:none;text-align:center;' >"+startdate+"</p>";
+
+for(j=1;j<=5;j++)
+
+
+{
+if(j<=feedbacrating)
+
+
+{
+ing+="<div class='images-list'><img src=http://bahuka.com/home/images/brain-gold.png class='list-main"+i+"-"+j+"'  id='"+j+"' onclick='addRating(this,"+userid+","+i+");' style='opacity:1;'></div>";
+
+}
+
+else
+
+{
+ ing+="<div class='images-list'><img src=http://bahuka.com/home/images/brain-black.png  class='list-main"+i+"-"+j+"'  id='"+j+"' onclick='addRating(this,"+userid+","+i+");' style='opacity:0.14;'></div>";
+
+
+}
+}
+classdata +="<div class='arrow-main' id='rating"+i+"' style='display:none;'><div class='imagew-arrow'><img src='img/arrow-1.png' onclick='prepagi("+i+")'></div><div class='text-arrow-img"+i+"'  id='"+scid+"' style='float: left;width: 56%;'>"+classname+"</div><div class='imagew-arrow'><img src='img/arrow-2.png' onclick='paging("+i+")'></div><div class='list-main' id='list-main"+i+"'>"+ing+"</div></div>";
+classdata1 +="<div class='arrow-main' id='rating-white"+i+"' style='display:none;'><div class='imagew-arrow'><img src='img/arrow-white1.png' onclick='prepagi1("+i+")'></div><div class='text-arrow-whitw"+i+"'  id='"+scid+"' style='color: white;font-size: 20px;width: 54%;float: left;'>"+classname+"</div><div class='imagew-arrow'><img src='img/arrow-white2.png' onclick='paging1("+i+")'></div></div>";
+
+
+}
+
+
+
+  var appendata="<p class='coenfidence-list'>Confidence and Understanding</p><div class='small-text'>Only Professors & you can see ratings.</div>"+text+"<div class='arrow-main' id='rating-class'><div class='imagew-arrow'><img src='img/arrow-1.png'></div><div class='text-arrow'>Add Class</div><div class='imagew-arrow'><img src='img/arrow-2.png' onclick='paging(0)'></div></div>"+classdata+"<div class='list-text  textarea'> <textarea  id='topics_discuss' name='topics_discuss' placeholder='What topics were discussed...'></textarea></div><div class='list-text'><span class='leftd'>Not Yet!</span><span class='right'>Got this!</span></div><div id='ratingLoading'></div><div class='submit-professor'><input value='RATE' type='submit'  onclick='classhedulelist("+userid+");'></div><div class='question-professsor'><div class='question-text'>Questions for Professor</div><div class='question-picture'><img src='http://bahuka.com/home/images/question-ans.png'></div><div class='arrow-main' id='rating-white'><div class='imagew-arrow'><img src='img/arrow-white1.png'></div><div class='text-arrow'>Add Classes</div><div class='imagew-arrow'><img src='img/arrow-white2.png' onclick='paging1(0)'></div></div>"+classdata1+"<div class='list-text largetextarea'><textarea name='topics_discuss1' id='topics_discuss1' placeholder='Submit a question about the material covered today…'></textarea></div><div id='whiteLoading'></div><div class='submit-question'><input type='button'  name='submit' value='submit' onclick='submitquestion("+userid+")'></div><div class='absolute' style='display:none;'>Thanks ! your Question has been submitted</div></div><div class='trophy-class'><img src=http://bahuka.com/home/images/trophy.png></div><div class='feedback-points'><div class='text-feedback'>Feedback Points:<span>0</span></div><div class='submit-question score-history '><a href='scorehistory.html'>Score History</a></div><div class='full-reports'>Check out your full Analytical Report</div>";
+
+jQuery("#reports").append(appendata);
+  },
+
+
+
+
+    error: function () 
+    { 
+      //alert("Error");
+    }
+  }); 
+
+
+}
+
+
+
+function paging(id)
+{
+
+jQuery(".text-arrow-img"+id).removeClass("fff");
+var newid=id+1;
+if (jQuery('div#rating'+newid).length) {
+
+jQuery("#rating-class").hide();
+jQuery("#rating"+newid).show();
+jQuery(".text-arrow-img"+newid).addClass("fff");
+
+jQuery("#rating"+id).hide();
+jQuery(".date-text"+id).hide();
+jQuery(".date-text"+newid).show();
+/*jQuery(".questionlist2").show();
+jQuery(".question_images2").show();*/
+}
+
+}
+
+
+function pagingquest(id,scid)
+{
+
+
+
+jQuery('.no-activity-'+scid).remove();
+jQuery('.question-show-'+scid).remove();
+jQuery(".text-arrow-img"+id).removeClass("fff");
+var newid=id+1;
+if (jQuery('div#rating'+newid).length) {
+
+jQuery("#rating-class").hide();
+jQuery("#rating"+newid).show();
+jQuery(".text-arrow-img"+newid).addClass("fff");
+var arrowid=jQuery(".text-arrow-img"+newid).attr("id");
+userid= localStorage.getItem('loginurid');
+var task ='questionlist';
+
+var formData = {
+task: task,
+userId:userid,
+class_id:arrowid
+ };
+ jQuery('#formLoading').addClass('show');
+
+
+
+
+
+  jQuery.ajax({
+    type: "post",
+    url: "http://bahuka.com/home/dev/index.php?option=com_content&view=appcode",
+    data: formData,
+   
+
+    success: function(responseprz) 
+    {
+   
+
+jQuery('#formLoading').removeClass('show');
+                  var groupobj = jQuery.parseJSON(responseprz);
+                  var garr = [], groupobj;
+
+                  for(key in groupobj) {
+                  garr.push(key);
+                  }
+                  var  lengthgroups=garr.length;
+         
+                  if(lengthgroups > 0){
+                // jQuery(".question-show").html("");
+                  for(group=1;group<=lengthgroups;group++)
+                  {
+                  //alert(group);
+                  var getstringifygroup = JSON.stringify(groupobj[group]);
+
+                  var groupRslt = jQuery.parseJSON(getstringifygroup);
+                  var question = groupRslt.question;
+
+
+
+ var showChar = 50;
+
+                if(question.length > showChar) {
+
+                var c = question.substr(0, showChar);
+                var h = question.substr(showChar, question.length - showChar);
+                var html="<div class='read-more'>"+c+"<span class='elippse-"+group+"-"+arrowid+"'>...</span><span  style='display:none;' class='morecontent"+group+"-"+arrowid+"'><span>"+h+"</span></span><div class='morelinks"+group+"-"+arrowid+"' onclick='more("+group+","+arrowid+");'>Read More</div></div>";
+                }
+
+                else
+
+                {
+
+                html=question;
+                }
+
+
+                  var class_id=groupRslt.class_id;
+
+var question2="<div class='question-show-"+class_id+"' id='question-show'><div class='questions-list2'>"+html+" </div></div>";
+
+jQuery('.arrow-main.main-'+class_id).append(question2);
+
+   }
+
+ }
+
+if(lengthgroups == 0)
+{
+
+
+jQuery('#formLoading').removeClass('show');
+var emptyques="<div class='no-activity-"+arrowid+"'><div class='text-activity'>No Activity</div><div class='no-question-imag'><img src='http://bahuka.com/home/images/no-question.png'></div></div>";
+
+jQuery('.arrow-main.main-'+arrowid).append(emptyques);
+
+jQuery('.question-total > strong').html('0');
+ }
+  },
+
+
+
+
+    error: function () 
+    { 
+      //alert("Error");
+    }
+  }); 
+
+
+jQuery("#rating"+id).hide();
+jQuery(".date-text"+id).hide();
+jQuery(".date-text"+newid).show();
+/*jQuery(".questionlist2").show();
+jQuery(".question_images2").show();*/
+}
+
+}
+function paging1(id)
+{
+
+jQuery(".text-arrow-whitw"+id).removeClass("fff");
+var newid=id+1;
+if (jQuery('div#rating-white'+newid).length) {
+
+jQuery("#rating-white").hide();
+jQuery("#rating-white"+newid).show();
+jQuery(".text-arrow-whitw"+newid).addClass("fff");
+
+jQuery("#rating-white"+id).hide();
+
+/*jQuery(".questionlist2").show();
+jQuery(".question_images2").show();*/
+}
+
+}
+
+
+
+
+function prepagi1(id)
+
+{
+jQuery(".text-arrow-whitw"+id).removeClass("white");
+var newid=id-1;
+
+
+if(newid==0){
+
+jQuery("#rating-white"+id).hide();
+jQuery("#rating-white").show();
+
+}
+else{
+if (jQuery('div#rating-white'+newid).length) {
+
+
+jQuery(".text-arrow-whitw"+newid).addClass("fff");
+jQuery("#rating-white").hide();
+jQuery("#rating-white"+newid).show();
+jQuery("#rating-white"+id).hide();
+
+/*jQuery(".questionlist2").show();
+jQuery(".question_images2").show();*/
+}
+}
+}
+function prepagi(id)
+
+{
+                  jQuery(".text-arrow-img"+id).removeClass("fff");
+                  var newid=id-1;
+
+
+                if(newid==0){
+
+                jQuery("#rating"+id).hide();
+                jQuery("#rating-class").show();
+                jQuery(".date-text"+id).hide();
+                }
+                else{
+                if (jQuery('div#rating'+newid).length) {
+
+
+                jQuery(".text-arrow-img"+newid).addClass("fff");
+                jQuery("#rating-class").hide();
+                jQuery("#rating"+newid).show();
+                jQuery("#rating"+id).hide();
+                jQuery(".date-text"+newid).show();
+                jQuery(".date-text"+id).hide();
+/*jQuery(".questionlist2").show();
+jQuery(".question_images2").show();*/
+}
+}
+}
+
+
+
+                            function prepagitest(id,scid)
+
+                            {
+jQuery('.no-activity-'+scid).remove();
+                              jQuery('.question-show-'+scid).remove();
+                            jQuery(".text-arrow-img"+id).removeClass("fff");
+                            var newid=id-1;
+
+
+                            if(newid==0){
+
+                            jQuery("#rating"+id).hide();
+                            jQuery("#rating-class").show();
+                            jQuery(".date-text"+id).hide();
+                            }
+                            else{
+                            if (jQuery('div#rating'+newid).length) {
+
+                      var arrowid=jQuery(".text-arrow-img"+newid).attr("id");
+                      userid= localStorage.getItem('loginurid');
+                      var task ='questionlist';
+
+                      var formData = {
+                      task: task,
+                      userId:userid,
+                      class_id:arrowid
+                      };
+
+
+ jQuery('#formLoading').addClass('show');
+
+
+
+                      jQuery.ajax({
+                      type: "post",
+                      url: "http://bahuka.com/home/dev/index.php?option=com_content&view=appcode",
+                      data: formData,
+
+
+                      success: function(responseprz) 
+                      {
+ jQuery('#formLoading').removeClass('show');
+  var groupobj = jQuery.parseJSON(responseprz);
+                  var garr = [], groupobj;
+
+                  for(key in groupobj) {
+                  garr.push(key);
+                  }
+                  var  lengthgroups=garr.length;
+               
+                  if(lengthgroups > 0){
+                // jQuery(".question-show").html("");
+                  for(group=1;group<=lengthgroups;group++)
+                  {
+                  //alert(group);
+                  var getstringifygroup = JSON.stringify(groupobj[group]);
+
+                  var groupRslt = jQuery.parseJSON(getstringifygroup);
+                  var question = groupRslt.question;
+
+                  var class_id=groupRslt.class_id;
+
+var showChar = 50;
+
+                if(question.length > showChar) {
+
+                var c = question.substr(0, showChar);
+                var h = question.substr(showChar, question.length - showChar);
+                var html="<div class='read-more'>"+c+"<span class='elippse-"+group+"-"+scid+"'>...</span><span  style='display:none;' class='morecontent"+group+"-"+scid+"'><span>"+h+"</span></span><div class='morelinks"+group+"-"+scid+"' onclick='more("+group+","+scid+");'>Read More</div></div>";
+                }
+
+                else
+
+                {
+
+                html=question;
+                }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+var question2="<div class='question-show-"+class_id+"' id='question-show'><div class='questions-list2'>"+html+" </div></div>";
+
+jQuery('.arrow-main.main-'+class_id).append(question2);
+
+}
+}
+
+
+
+if(lengthgroups == 0)
+{
+ jQuery('#formLoading').removeClass('show');
+var emptyques="<div class='no-activity-"+arrowid+"'><div class='text-activity'>No Activity</div><div class='no-question-imag'><img src='http://bahuka.com/home/images/no-question.png'></div></div>";
+
+jQuery('.arrow-main.main-'+arrowid).append(emptyques);
+
+jQuery('.question-total > strong').html('0');
+ }
+                      },
+
+
+
+
+                      error: function () 
+                      { 
+                      //alert("Error");
+                      }
+                      }); 
+                            jQuery(".text-arrow-img"+newid).addClass("fff");
+                            jQuery("#rating-class").hide();
+                            jQuery("#rating"+newid).show();
+                            jQuery("#rating"+id).hide();
+                            jQuery(".date-text"+newid).show();
+                            jQuery(".date-text"+id).hide();
+
+                            }
+
+
+
+                            }
+                            }
+
+
+            function addRating(hh,userid,j){
+            var hha=hh.src;
+            var id=hh.id;
+            var task="addrating";
+            var classid=jQuery(".fff").attr("id");
+
+            if(classid==undefined)
+
+            {
+
+            alert("Please select class");
+            }
+            else{
+ 
+
+if(hha=="http://bahuka.com/home/images/brain-black.png")
+{
+
+  
+           /* jQuery(".list-main"+i+"-"+id).attr("src","http://bahuka.com/home/images/brain-gold.png");
+            jQuery(".list-main"+i+"-"+id).css("opacity","1");
+*/
+           for(i=1;i<=id;i++)
+
+{
+
+
+//alert(id);
+
+   jQuery(".list-main"+j+"-"+i).attr("src","http://bahuka.com/home/images/brain-gold.png");
+ jQuery(".list-main"+j+"-"+i).css("opacity","1");
+
+}
+
+
+
+
+
+            var formData = {
+            task:task,
+            classid:classid,
+            rating: id,
+            userId:userid
+            };
+            jQuery.ajax({
+            type: "post",
+            url: "http://bahuka.com/home/dev/index.php?option=com_content&view=appcode",
+            data: formData,
+            //  beforeSend: function () { jQuery.mobile.loading('show'); },
+            success: function(response) {
+
+            },
+            error: function () { 
+            //alert("Error");
+            }
+            }); 
+}
+if(hha=="http://bahuka.com/home/images/brain-gold.png")
+{
+
+              var ida=parseInt(id) + 1;
+              for(i=ida;i<=5;i++)
+
+
+              {
+
+                
+              jQuery(".list-main"+j+"-"+i).attr("src","http://bahuka.com/home/images/brain-black.png");
+              jQuery(".list-main"+j+"-"+i).css("opacity","0.14");
+
+
+              }
+
+
 
 /*
-function successHandler(result) {
-    console.log('Success: '+ result);
-}
-function errorHandler(error) {
-    console.log('Error: '+ error);
-}
-function onNotificationGCM(e) {
-    switch(e.event){
-        case 'registered':
-            if (e.regid.length > 0){
-                deviceRegistered(e.regid);
+            jQuery(".list-main"+i+"-"+id).attr("src","http://bahuka.com/home/images/brain-black.png");
+            jQuery(".list-main"+i+"-"+id).css("opacity","0.14");*/
+            //var ratinga=id-1;
+            var formData = {
+            task:task,
+            classid:classid,
+            userId: userid,
+            rating: id
+            };
+            jQuery.ajax({
+            type: "post",
+            url: "http://bahuka.com/home/dev/index.php?option=com_content&view=appcode",
+            data: formData,
+            //  beforeSend: function () { jQuery.mobile.loading('show'); },
+            success: function(response) {
+
+            },
+            error: function () { 
+            //alert("Error");
             }
-        break;
+            }); 
 
-        case 'message':
-            if (e.foreground){
-              // When the app is running foreground. 
-                alert('The room temperature is set too high')
-            }
-        break;
 
-        case 'error':
-            console.log('Error: ' + e.msg);
-        break;
+}
 
-        default:
-          console.log('An unknown event was received');
-          break;
+}
+}
+ function classhedulelist(userid){
+
+var classid=jQuery(".fff").attr("id");
+
+
+var topics=jQuery("#topics_discuss").val();
+if(classid==undefined)
+
+{
+
+  jQuery(".fff").toggleClass("red");
+  alert("please select the class ");
+
+}
+
+else if(topics=="")
+{
+
+  alert("please write the topics");
+  
+}
+
+else{
+
+
+jQuery('#ratingLoading').addClass('show');
+
+
+
+task="submitrate";
+  var formData = {
+    task:task,
+   classid: classid,
+   userId: userid,
+   topics: topics
+  };
+
+  jQuery.ajax({
+    type: "post",
+    url: "http://bahuka.com/home/dev/index.php?option=com_content&view=appcode",
+    data: formData,
+    //  beforeSend: function () { jQuery.mobile.loading('show'); },
+    success: function(response) {
+    	jQuery('#ratingLoading').removeClass('show');
+
+ jQuery("#topics_discuss").val("");
+ alert("Thanks your rating has been submitted.");
+    },
+    error: function () { 
+      //alert("Error");
     }
+  }); 
+}
+}
+
+function submitquestion(userid){
+
+var question=jQuery("#topics_discuss1").val();
+var classid=jQuery(".fff").attr("id");
+//alert(question);
+if(classid==undefined)
+
+{
+
+  jQuery("#class").toggleClass("red");
+   alert("First select the Class");
+return false;
+}
+else if(question=="")
+{
+
+  alert("Please write the question ");
+  return false;
+}
+else{
+
+
+  jQuery("#whiteLoading").addClass('show');
+
+  var task="submiquestion";
+
+var formData = {
+     task:task,
+   userId: userid,
+   question: question,
+   classid:classid
+  };
+jQuery.ajax({
+    type: "post",
+    url: "http://bahuka.com/home/dev/index.php?option=com_content&view=appcode",
+    data: formData,
+    //  beforeSend: function () { jQuery.mobile.loading('show'); },
+    success: function(response) {
+     //jQuery("#formLoading").addClass('show');
+jQuery("#whiteLoading").removeClass('show');
+ alert("Thanks your question has been submitted.");
+/*function alertDismissed() {
+    // do something
+}
+
+window.alert = navigator.notification.alert;
+
+
+
+navigator.notification.alert(
+    'You are the winner!',  // message
+    alertDismissed,         // callback
+    'Game Over',            // title
+    'Done'                  // buttonName
+);*/
+ jQuery("#topics_discuss1").val("");
+    },
+    error: function () { 
+      //alert("Error");
+    }
+  }); 
+
+
+}
+
+
+  }
+
+
+  function openratingdiv(){
+
+
+
+userid= localStorage.getItem('loginurid');
+ var task="openratingdiv";
+
+var formData = {
+     task:task,
+   userId: userid
+  };
+jQuery.ajax({
+    type: "post",
+    url: "http://bahuka.com/home/dev/index.php?option=com_content&view=appcode",
+    data: formData,
+    //  beforeSend: function () { jQuery.mobile.loading('show'); },
+    success: function(response) {
+
+
+  var obj = jQuery.parseJSON( response );
+
+
+
+
+var getstringifyq = JSON.stringify(obj['average']);
+var average = jQuery.parseJSON( getstringifyq );
+
+var total = JSON.stringify(obj['total']);
+var total1 = jQuery.parseJSON( total );
+var averageimg="";
+
+for(k=1;k<=5;k++)
+
+
+{
+if(k<=average)
+
+
+{
+ averageimg+="<div class='images-list'><img src='http://bahuka.com/home/images/brain-gold.png'></div>";
+
+
+
+}
+else
+
+
+{
+ averageimg+="<div class='images-list'><img src='http://bahuka.com/home/images/brain-white.png'></div>";
+
+
+
+}
+
+
+}
+var dataappend="<h3>Average Rating Score</h3><div class='list-main'>"+averageimg+"</div><div class='total-ratings'>Total Ratings:<strong>"+total1+"</strong></div></div>";
+
+jQuery("#ratings").append(dataappend)
+
+  var arr = [], obj;
+
+for(key in obj) {
+    arr.push(key);
+} 
+len = arr.length;
+
+
+var len1=len-2;
+if(len1>0)
+
+{
+
+
+ for(i=1; i<=len1;i++)
+  {
+    
+    var ing="";
+
+var getstringify = JSON.stringify(obj[i]);
+//console.log(getstringify);
+var objs = jQuery.parseJSON( getstringify );
+var classname = objs.classname;
+var startdate = objs.startdate;
+var ratingnew=objs.ratingnew;
+var topic=objs.topic;
+
+
+var appendtopic ="";
+for(l=1;l<=5;l++)
+
+{
+  if(l<=ratingnew)
+
+  {
+ appendtopic+="<div class='images-list'><img src=http://bahuka.com/home/images/brain-gold.png></div>";
+
+}
+
+
+else{
+
+ appendtopic+="<div class='images-list'><img src=http://bahuka.com/home/images/brain-white.png></div>";
+
+}
+}
+var dataappend1="<div class='rating-class'><div class='rating-left'>"+classname+" "+startdate+"</div><div class='rating-right'><div class='list-maing'>"+appendtopic+"</div></div></div><div class='topic-class'><div class='topic-p'>Topic</div><div class='topics-discuss'>"+topic+"</div></div>";
+
+jQuery("#ratings").append(dataappend1);
+
+
+}
+
+}
+
+else{
+jQuery("#ratings").html("");
+var nodata="<h3>Average Rating Score</h3><div class='list-main'><div class='images-list'><img src='http://bahuka.com/home/images/brain-white.png'></div><div class='images-list'><img src='http://bahuka.com/home/images/brain-white.png'></div><div class='images-list'><img src='http://bahuka.com/home/images/brain-white.png'></div><div class='images-list'><img src='http://bahuka.com/home/images/brain-white.png'></div><div class='images-list'><img src='http://bahuka.com/home/images/brain-white.png'></div></div><div class='total-ratings'>Total Ratings:<strong>0</strong></div><div class='norating-imag' style='text-align:center'><p>No Rating Yet!</p><div class='align-image' style='text-align:center'><img src=http://bahuka.com/home/images/crying-picture.png></div></div>";
+
+
+jQuery("#ratings").append(nodata);
+
+}
+
+  
+    },
+    error: function () { 
+      //alert("Error");
+    }
+  }); 
+  }
+
+
+    function openratingquestion(){
+
+
+
+userid= localStorage.getItem('loginurid');
+ var task="openratingquestion";
+var classdata="";
+        var formData = {
+         task:task,
+        userId: userid
+        };
+
+
+jQuery.ajax({
+    type: "post",
+    url: "http://bahuka.com/home/dev/index.php?option=com_content&view=appcode",
+    data: formData,
+
+
+
+
+    //  beforeSend: function () { jQuery.mobile.loading('show'); },
+    success: function(response) {
+//jQuery("#ratings").html("");
+
+  var obj = jQuery.parseJSON( response );
+
+  var arr = [], obj;
+
+for(key in obj) {
+    arr.push(key);
+} 
+len = arr.length;
+if(len>0)
+
+{
+
+
+ for(i=1; i<=len;i++)
+  {
+
+    var appendtopic="";
+    var ing="";
+
+var getstringify = JSON.stringify(obj[i]);
+//console.log(getstringify);
+var objs = jQuery.parseJSON( getstringify );
+var classname = objs.classname;
+var startdate = objs.startdate;
+var scid = objs.scid;
+
+
+
+if(i==len)
+
+{
+var imgdata="<img src='img/arrow-2.png'>";
+
+
+}
+
+else{
+
+  var imgdata="<img src='img/arrow-2.png' onclick='pagingquest("+i+","+scid+")'>";
+}
+classdata +="<div class='arrow-main  main-"+scid+"' id='rating"+i+"' style='display:none;'><div class='imagew-arrow'><img src='img/arrow-1.png' onclick='prepagitest("+i+","+scid+")'></div><div class='text-arrow-img"+i+"'  id='"+scid+"' style='float: left;width: 56%;margin-bottom: 16px;'>"+classname+"</div><div class='imagew-arrow'>"+imgdata+"</div></div>";
+
+
+}
+
+
+
+var qa="<div class='question-aqnswer'>Q&A</div><div class='question-total'>Questions:<strong>82</strong></div><div class='arrow-main' id='rating-class'><div class='imagew-arrow'><img src='img/arrow-1.png'></div><div class='text-arrow'>Select Class</div><div class='imagew-arrow'><img src='img/arrow-2.png' onclick='pagingquest(0,0)'></div></div><div id='formLoading'></div>"+classdata+"";
+jQuery("#questions").append(qa);
+
+
+}
+
+
+/*else{
+
+var nodata="<div class='question-aqnswer'>Q&A</div><div class='question-total'>Questions:<strong>0</strong></div>";
+
+
+jQuery("#ratings").append(nodata);
+
 }*/
+
+
+
+  
+    },
+    error: function () { 
+      //alert("Error");
+    }
+  }); 
+  }
+
+
+
+function more(i,cid)
+
+
+{
+
+jQuery(".morecontent"+i+"-"+cid).show();
+jQuery(".elippse-"+i+"-"+cid).hide();
+
+
+
+   jQuery(".morelinks"+i+"-"+cid).hide();
+}
+
+function checkurl()
+
+{
+
+
+    var  userid = localStorage.getItem('loginurid');
+
+
+
+if(userid==null)
+{
+window.location.href = "index.html";
+
+}
+}

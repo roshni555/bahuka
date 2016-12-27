@@ -25,10 +25,12 @@
 
 jQuery( "#top-navbar" ).click(function() {   
     jQuery('#sidebar').load('sidemenubar.html');
+  /*   jQuery('body').css("overflow" ,"hidden");  */
         
      if( jQuery('#sidebar').is(':visible') ) {
         jQuery('#sidebar').animate({ 'width': '0px' }, 'normal', function(){
-            jQuery('#sidebar').hide();              
+            jQuery('#sidebar').hide();   
+
         });
         jQuery('#main-content').animate({ 'margin-left': '0px' }, 'normal');
     }

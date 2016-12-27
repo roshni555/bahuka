@@ -24,6 +24,8 @@ body {
      
     margin:0px;
     height:100%;
+    padding: 0;
+   
      }
 
 /* Portrait layout (default) */
@@ -95,3 +97,350 @@ h1 {
     -webkit-animation:fade 3000ms infinite;
 }      
 
+#reports .small-text {
+    font-size: 13px;
+    margin: 0 auto;
+    text-align: center;
+    width: 70%;
+}
+
+.arrow-main {
+    margin: 0 auto;
+    text-align: center;
+    width: 90%;
+}
+.imagew-arrow {
+    float: left;
+    width: 21%;
+}
+.text-arrow {
+    float: left;
+    width: 56%;
+}
+
+.imagew-arrow  img {
+    margin: 0;
+    width: 27%;
+}
+.list-main {
+    margin: 0 15% !important;
+   overflow: hidden;
+width: 82%;
+}
+
+.images-list {
+    float: left;
+    width: 16%;
+}
+.images-list > img {
+    width: 81%;
+    margin:0;
+}
+
+.list-text.textarea {
+    color: #acacac;
+    float: none;
+    margin: 0 auto;
+    width: 82%;
+}
+.list-text.textarea textarea {
+    border: 1px solid black;
+    border-radius: 8px;
+
+    padding: 5%;
+    text-align: center;
+    width: 90%;
+}
+.list-text {
+    color: #909090;
+    float: left;
+    font-family: calibery;
+    font-size: 12px;
+    width: 100%;
+     margin-top: 4%;
+}
+.list-text .leftd {
+    float: left;
+    padding-left: 45px;
+}
+.list-text .right {
+    float: right;
+    padding-right: 45px;
+}
+.question-professsor {
+    background-color: #207ea9;
+    margin-top: 1%;
+    width: 100%;
+    float:left;
+}
+
+.question-text {
+    color: white;
+    font-family: calibery;
+    font-size: 20px;
+    padding-top: 4%;
+    text-align: center;
+}
+
+.question-picture {
+    text-align: center;
+    width: 100%;
+}
+
+.question-picture  img {
+    margin: 0;
+    text-align: center;
+    width: 29%;
+}
+.list-text.largetextarea {
+    float: none;
+    margin: 0 auto;
+   
+    text-align: center;
+    width: 80%;
+}
+
+.list-text.largetextarea > textarea {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+   
+    margin: 15px auto;
+    padding: 14px 12px;
+    width: 88%;
+}
+
+.submit-question {
+    float: left;
+    margin-bottom: 15%;
+    margin-top: 8%;
+    text-align: center;
+    width: 100%;
+}
+.submit-question input ,.submit-question a{
+    background-color: gray;
+    border: 1px solid white;
+    border-radius: 5px;
+    color: white;
+    padding: 5px 15px;
+    width: 48%;
+}
+
+.trophy-class {
+    float: left;
+  
+    text-align: center;
+   
+    width: 100%;
+}
+
+.trophy-class > img {
+    margin: -23px 0 0;
+    position: relative;
+    width: 21%;
+    z-index: 9999;
+}
+
+.feedback-points {
+    color: gray;
+    text-align: center;
+    width: 100%;
+}
+.feedback-points span{
+
+    color:green;
+     font-weight: bold;
+}
+.submit-question.score-history {
+    margin: 17px auto;
+}
+
+.submit-question.score-history > a {
+    border: medium none;
+    margin: 0 auto;
+    text-decoration: none;
+}
+
+.full-reports {
+    color: #b4b4b4;
+    font-size: 12px;
+    width: 100%;
+}
+
+#student-score-pges ul {
+    background-color: #ddd;
+    float: none;
+    margin: 0 auto;
+    text-align: center;
+   width: 100%;
+}
+
+#student-score-pges a {
+    padding: 10px 9px;
+}
+#ratings {
+background-color: #207ea9;
+    clear: both;
+    color: white;
+    float: left;
+    height: 100%;
+    overflow: auto;
+    text-align: center;
+    width: 100%;
+}
+
+
+#ratings .list-main {
+  
+    width: 85%;
+}
+
+
+
+#ratings .total-ratings {
+    border-bottom: 1px solid white;
+
+    font-family: caliberi;
+    font-size: 18px;
+    margin: 5% auto 3%;
+    padding-bottom: 5px;
+    width: 90%;
+    text-align: left;
+}
+.rating-class {
+  
+
+    margin: 5px auto;
+   
+    width: 90%;
+}
+
+
+.rating-class .rating-left {
+    float: left;
+    margin-top: 1%;
+    width: 35%;
+    text-align: left;
+}
+
+.absolute {
+    background: white none repeat scroll 0 0;
+    color: gray;
+    left: 36px;
+    padding: 11px;
+    position: absolute;
+    text-align: center;
+    width: 74%;
+}
+
+
+.list-maing
+{
+
+    width:100%;
+
+}
+
+
+.list-maing .images-list {
+    float: left;
+    width: 19%;
+}
+
+.topic-p {
+  clear: both;
+    font-size: 14px;
+    width: 11%;
+}
+
+.topics-discuss {
+
+    font-size: 14px;
+    overflow-wrap: break-word;
+    text-align: left;
+    width: 100%;
+}
+
+.topic-class {
+    border-bottom: 1px solid white;
+    font-family: calibery;
+    margin: 5px auto;
+   clear: both;
+     width: 90%;
+}
+
+#questions .question-aqnswer {
+    border-bottom: 1px solid #015984;
+    color: #015984;
+    font-size: 18px;
+    font-weight: bold;
+    margin: 9px auto 0;
+    opacity: 1;
+    padding: 5px;
+    text-align: center;
+    width: 50%;
+}
+
+
+#questions  .question-total {
+    color: #015984;
+    font-size: 18px;
+    margin: 11px auto;
+    text-align: center;
+    width: 100%;
+}
+#question-show {
+    border-top: 1px solid #207ea9;
+  
+    margin: 15px auto;
+    overflow: auto;
+    padding-bottom: 20px;
+    padding-top: 20px;
+    text-align: center;
+    width: 80%;
+}
+
+.questions-list2 {
+    color: #207ea9;
+    font-size: 14px;
+    overflow-wrap: break-word;
+    width: 100%;
+}
+
+
+.rating-right {
+    float: right;
+    width: 65%;
+}
+
+.read-more div {
+    color: gray;
+    float: right;
+    font-size: 13px;
+    margin-top: 28px;
+}
+
+
+.text-activity {
+    color: red;
+    float: left;
+    text-align: center;
+    width: 100%;
+}
+.no-question-imag,.image-no-rating {
+    margin: 0;
+    text-align: center;
+    width: 100%;
+}
+
+.no-question-imag > img,.image-no-rating > img {
+    margin: 0 auto;
+}
+
+
+.student-class-button-pge .no-score-p {
+    color: red;
+    font-family: calibery;
+    font-size: 17px;
+    font-style: normal;
+    font-weight: bold;
+}

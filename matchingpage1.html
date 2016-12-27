@@ -11,7 +11,7 @@
 
  
 </head>
-<body class="location4">
+<body class="location4" onload="checkurl();">
 
 <div id="main-content">
 <div id="header"> </div> <!-- header.html -->
@@ -93,10 +93,13 @@
 $(document).ready(function(){
     $('#sidebar').hide();   
     $('#header').load('header.html');
+
+
 });
 
 $("#StdStartBtn").click(function(){
   window.location.href="student-test1.html";
 });
+
 
 </script>
