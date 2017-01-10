@@ -6836,6 +6836,8 @@ var formData = {
 task: task,
 useridpr:   useridpr,
  };
+
+ jQuery("#main-content #sidebar .sidebar_main_div .sidebar_profile").html("");
   jQuery.ajax({
     type: "post",
     url: "http://bahuka.com/home/index.php?option=com_content&view=appcode",
