@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="io.cordova.bahuka" version="1.1.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+<widget id="io.cordova.bahuka" version="1.1.2" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <name>Bahuka</name>
     <description>
         A sample Apache Cordova application that responds to the deviceready event.
@@ -9,9 +9,11 @@
     </author>
     <content src="index.html" />
     <plugin name="cordova-plugin-whitelist" spec="1" />
-    <gap:plugin name="cordova-plugin-file-transfer" source="npm"  />
-     <gap:plugin name="cordova-plugin-file" source="npm"  />
+   <!--  <plugin name="cordova-plugin-file-transfer" source="pgb"  /> -->
+  <!--   <plugin name="cordova-plugin-file" source="pgb"  /> -->
+ <plugin spec="https://github.com/apache/cordova-plugin-file" source="git" />
 
+ <plugin spec="https://github.com/apache/cordova-plugin-file-transfer" source="git" />
     <plugin name="cordova-plugin-camera"  />
     <plugin name="cordova-plugin-media"  />
     <plugin name="cordova-plugin-device"  />
@@ -27,12 +29,37 @@
     <allow-intent href="mailto:*" />
     <allow-intent href="geo:*" />
 
-    <platform name="android">
-        <allow-intent href="market:*" />
-    </platform>
-    <platform name="ios">
-        <allow-intent href="itms:*" />
-        <allow-intent href="itms-apps:*" />
+<platform name="android">
+<allow-intent href="market:*" />
+
+
+<splash src="icons/screen_640x960.png" density="land-hdpi"/>
+<splash src="icons/screen_640x960.png" density="land-ldpi"/>
+<splash src="icons/screen_640x960.png" density="land-mdpi"/>
+<splash src="icons/screen_640x960.png" density="land-xhdpi"/>
+
+<splash src="icons/screen_640x960.png" density="port-hdpi"/>
+<splash src="icons/screen_640x960.png" density="port-ldpi"/>
+<splash src="icons/screen_640x960.png" density="port-mdpi"/>
+<splash src="icons/screen_640x960.png" density="port-xhdpi"/>
+</platform>
+<platform name="ios">
+<allow-intent href="itms:*" />
+<allow-intent href="itms-apps:*" />
+
+
+<splash src="icons/screen_320x480.png" width="320" height="480"/>
+<splash src="icons/screen_640x960.png" width="640" height="960"/>
+<splash src="icons/screen_768x1024.png" width="768" height="1024"/>
+<splash src="icons/screen_1536x2048.png" width="1536" height="2048"/>
+<splash src="icons/screen_1024x768.png" width="1024" height="768"/>
+<splash src="icons/screen_2048x1536.png" width="2048" height="1536"/>
+<splash src="icons/screen_640x1136.png" width="640" height="1136"/>
+<splash src="icons/screen_750x1334.png" width="750" height="1334"/>
+<splash src="icons/screen_1242x2208.png" width="1242" height="2208"/>
+<splash src="icons/screen_2208x1242.png" width="2208" height="1242"/>
+
+
     </platform>
 
     <icon src="icons/logo_57x57.png" gap:platform="ios" width="57" height="57" />

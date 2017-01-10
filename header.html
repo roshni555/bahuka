@@ -24,21 +24,25 @@
 <script type="text/javascript">
 
 jQuery( "#top-navbar" ).click(function() {   
+
+	getuserprofile();
     jQuery('#sidebar').load('sidemenubar.html');
-  /*   jQuery('body').css("overflow" ,"hidden");  */
+    
         
      if( jQuery('#sidebar').is(':visible') ) {
         jQuery('#sidebar').animate({ 'width': '0px' }, 'normal', function(){
-            jQuery('#sidebar').hide();   
+            jQuery('#sidebar').hide(); 
+             jQuery('body').css("overflow" ,"auto"); 
+               
 
         });
         jQuery('#main-content').animate({ 'margin-left': '0px' }, 'normal');
     }
     else {
-        getuserprofile(); /*  Function to get Login user profile details at sidebar*/
+        //getuserprofile(); /*  Function to get Login user profile details at sidebar*/
         jQuery('#sidebar').show();
        
-       
+           jQuery('body').css("overflow" ,"hidden"); 
         jQuery('#sidebar').animate({ 'width': '280px' }, 'normal');
         jQuery('#main-content').animate({ 'margin-left': '280px' }, 'slow');
     }

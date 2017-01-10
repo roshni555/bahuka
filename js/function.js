@@ -2356,15 +2356,31 @@ else{
 }
 if(profilelike>0){
 
-var span="<span  onclick='profilelikess("+userid+","+puserid+",this);' class='profilelike'>Liked</span>";
+var span1="<img src='img/fb-new.png'  id='Liked' style='opacity:1' onclick='profilelikess("+userid+","+puserid+",this);'>";
 }
 else{
 
- span="<span  onclick='profilelikess("+userid+","+puserid+",this);'  class='profilelike'>Like</span>";
+ span1="<img src='img/fb-new.png'  id='Like' style='opacity:0.30'  onclick='profilelikess("+userid+","+puserid+",this);'>";
+}
+
+if(puserid!=userid)
+{
+
+var data1="<div class='tab-main-score'><ul class='tab'><li><a href='javascript:void(0)' class='tablinks' onclick='openCity(event, "+'"about"'+")'>About</a></li></ul><div class='like-me'><div class='button-like'>"+like+"</div><div class=img-like>"+span1+"</div></div></div>";
+
+}
+
+else{
+
+
+
+var data1="<div class='tab-main-score'><ul class='tab'><li><a href='javascript:void(0)' class='tablinks' onclick='openCity(event,"+'"reports"'+")'>Reports</a></li><li><a href='javascript:void(0)' class='tablinks' onclick='openCity(event, "+'"about"'+")'>About</a></li></ul><div class='like-me'><div class='button-like'>"+like+"</div><div class=img-like>"+span1+"</div></div></div>";
 }
 
 
-  first="<!--div class='proimg_top'><img id='pro_l_img' src='img/pro_l_img.png'><p id='return_top_txt'>Return To Results</p><img id='pro_r_img' src='img/tepro_r_img.png'></div--><div class='thr_prifile_page'><div class='thr_prifile_banner'><img src='"+covers+"'></div></div><div class='sin_pfl_dtl'><div class='best-match-page'><div class='best-match-pro'><div class=best-tchr-image><img src='"+img+"'></div></div><div class='best-match-text'><div class='chrt_sml'><div id='chartContainer_1s'></div></div></div></div><div class='bottom-colmk'><div class='Uer_profile_dtl'><div class='thr-nme-bestk'>"+username+"<br><span>"+st+", "+collegename+"</span></div></div></div></div><div class='aboutme_main_container'><div class='about_me_profile'><div class='about_center_div'><div class='about-top-part'><div class='about_dtl'><p class='about_txt bottm-line'><span class='about-div'>About Me</span><span class='imgspans'><img src='img/fblike.png'></span>"+span+"<span class='blue-like2'>"+like+"</span></p></div>"+tt+"</div><div class='email-bottom-part'><div class='about_email'><p id='top_line'></p><p class='about_emaildtl'><img src='img/emailltr.png'> "+useremail+"</p></div></div></div></div></div><div class='profil-group-div'><div class='group_dtl'><p class='group-text'>Class Groups</p></div><div id='student-clases-groups' class='student-clases-groups'></div>";
+
+
+ first="<!--div class='proimg_top'><img id='pro_l_img' src='img/pro_l_img.png'><p id='return_top_txt'>Return To Results</p><img id='pro_r_img' src='img/tepro_r_img.png'></div--><div class='thr_prifile_page'><div class='thr_prifile_banner'><img src='"+covers+"'></div></div><div class='sin_pfl_dtl'><div class='best-match-page'><div class='best-match-pro'><div class=best-tchr-image><img src='"+img+"'></div></div><div class='best-match-text'><div class='chrt_sml'><div id='chartContainer_1s'></div></div></div></div></div><div class='bottom-colmk'><div class='Uer_profile_dtl'><div class='thr-nme-bestk'><p>"+username+"</p><span>"+st+", "+collegename+"</span></div></div></div><div class='aboutme_main_container'><div class='about_me_profile'>"+data1+"<div class='about_center_div tabcontent' id='about' style='display:block;'><div class='about-top-part'><div class='about_dtl'><p class='about_txt bottm-line'><span class='about-div'>About Me</span><!--span class='imgspans'><img src='img/fblike.png'></span><span class='blue-like2'>"+like+"</span--></p></div>"+tt+"</div><div class='email-bottom-part'><div class='about_email'><p id='top_line'></p><p class='about_emaildtl'><img src='img/emailltr.png'> "+useremail+"</p></div></div></div><div id='reports' class='tabcontent'></div></div></div></div></div></div></div><div class='profil-group-div'><div class='group_dtl'><p class='group-text'>Class Groups</p></div><div id='student-clases-groups' class='student-clases-groups'></div>";
 
   jQuery("#student-class-pge").append(first);
 
@@ -2517,23 +2533,39 @@ else{
 if (textreslts==null||majorreslts==null||userfrom==null){
 
 
-  tt="";
+  tt="<div class='profess_dtl_prf'><div class='left-user-img'><img src='http://bahuka.com/home/images/crying-user.png'></div><div class='right-user'><img src='http://bahuka.com/home/images/user-circle.png'><img src='http://bahuka.com/home/images/user-circle.png'><img src='http://bahuka.com/home/images/user-circle.png'></div></div>";
 }
 else{
-
- tt= "<div class='profess_dtl_prf'><p>"+textreslts+"</p><p>"+majorreslts+"</p><p>"+userfrom+"</p></div>";
+tt= "<div class='profess_dtl_prf'><p>"+textreslts+"</p><p>"+majorreslts+"</p><p>"+userfrom+"</p></div>";
 }
+
 if(profilelike>0){
 
-var span="<span  onclick='profilelikess("+userid+","+puserid+",this);' class='profilelike'>Liked</span>";
+var span1="<img src='img/fb-new.png'  id='Liked' style='opacity:1' onclick='profilelikess("+userid+","+puserid+",this);'>";
 }
 else{
 
- span="<span  onclick='profilelikess("+userid+","+puserid+",this);'  class='profilelike'>Like</span>";
+ span1="<img src='img/fb-new.png'  id='Like' style='opacity:0.30'  onclick='profilelikess("+userid+","+puserid+",this);'>";
+}
+
+if(puserid!=userid)
+{
+
+var data1="<div class='tab-main-score'><ul class='tab'><li><a href='javascript:void(0)' class='tablinks' onclick='openCity(event, "+'"about"'+")'>About</a></li></ul><div class='like-me'><div class='button-like'>"+like+"</div><div class=img-like>"+span1+"</div></div></div>";
+
+}
+
+else{
+
+
+
+var data1="<div class='tab-main-score'><ul class='tab'><li><a href='javascript:void(0)' class='tablinks' onclick='openCity(event,"+'"reports"'+")'>Reports</a></li><li><a href='javascript:void(0)' class='tablinks' onclick='openCity(event, "+'"about"'+")'>About</a></li></ul><div class='like-me'><div class='button-like'>"+like+"</div><div class=img-like>"+span1+"</div></div></div>";
 }
 
 
-  first="<!--div class='proimg_top'><img id='pro_l_img' src='img/pro_l_img.png'><p id='return_top_txt'>Return To Results</p><img id='pro_r_img' src='img/tepro_r_img.png'></div--><div class='thr_prifile_page'><div class='thr_prifile_banner'><img src='"+covers+"'></div></div><div class='sin_pfl_dtl'><div class='best-match-page'><div class='best-match-pro'><div class=best-tchr-image><img src='"+img+"'></div></div><div class='best-match-text'><div class='chrt_sml'><div id='chartContainer_1s'></div></div></div></div><div class='bottom-colmk'><div class='Uer_profile_dtl'><div class='thr-nme-bestk'>"+username+"<br><span>"+st+", "+collegename+"</span></div></div></div></div><div class='aboutme_main_container'><div class='about_me_profile'><div class='about_center_div'><div class='about-top-part'><div class='about_dtl'><p class='about_txt bottm-line'><span class='about-div'>About Me</span><span class='imgspans'><img src='img/fblike.png'></span>"+span+"<span class='blue-like2'>"+like+"</span></p></div>"+tt+"</div><div class='email-bottom-part'><div class='about_email'><p id='top_line'></p><p class='about_emaildtl'><img src='img/emailltr.png'> "+useremail+"</p></div></div></div></div></div><div class='profil-group-div'><div class='group_dtl'><p class='group-text'>Class Groups</p></div><div id='student-clases-groups' class='student-clases-groups'></div>";
+
+
+ first="<!--div class='proimg_top'><img id='pro_l_img' src='img/pro_l_img.png'><p id='return_top_txt'>Return To Results</p><img id='pro_r_img' src='img/tepro_r_img.png'></div--><div class='thr_prifile_page'><div class='thr_prifile_banner'><img src='"+covers+"'></div></div><div class='sin_pfl_dtl'><div class='best-match-page'><div class='best-match-pro'><div class=best-tchr-image><img src='"+img+"'></div></div><div class='best-match-text'><div class='chrt_sml'><div id='chartContainer_1s'></div></div></div></div></div><div class='bottom-colmk'><div class='Uer_profile_dtl'><div class='thr-nme-bestk'><p>"+username+"</p><span>"+st+", "+collegename+"</span></div></div></div><div class='aboutme_main_container'><div class='about_me_profile'>"+data1+"<div class='about_center_div tabcontent' id='about' style='display:block;'><div class='about-top-part'><div class='about_dtl'><p class='about_txt bottm-line'><span class='about-div'>About Me</span><!--span class='imgspans'><img src='img/fblike.png'></span><span class='blue-like2'>"+like+"</span--></p></div>"+tt+"</div><div class='email-bottom-part'><div class='about_email'><p id='top_line'></p><p class='about_emaildtl'><img src='img/emailltr.png'> "+useremail+"</p></div></div></div><div id='reports' class='tabcontent'></div></div></div></div></div></div></div><div class='profil-group-div'><div class='group_dtl'><p class='group-text'>Class Groups</p></div><div id='student-clases-groups' class='student-clases-groups'></div>";
 
   jQuery("#student-class-pge").append(first);
 
@@ -3025,7 +3057,7 @@ like=objsp.like;
  
   //alert(collabcclz); 
   //alert(clzyres);
-   if(clzyres || textreslts || majorreslts || clznme)
+   /*if(clzyres || textreslts || majorreslts || clznme)
   { }
   else
   {clzyres  = "" ;
@@ -3033,7 +3065,7 @@ like=objsp.like;
     majorreslts  = "";
     clznme= "";
   } 
-  if(cityreslts && statereslts && countryreslts ){
+*/  if(cityreslts && statereslts && countryreslts ){
 
 
    var result = countryreslts.split('_');
@@ -3047,21 +3079,39 @@ like=objsp.like;
 if (textreslts==null||majorreslts==null||userfrom==null){
 
 
-  tt="";
+  tt="<div class='profess_dtl_prf'><div class='left-user-img'><img src='http://bahuka.com/home/images/crying-user.png'></div><div class='right-user'><img src='http://bahuka.com/home/images/user-circle.png'><img src='http://bahuka.com/home/images/user-circle.png'><img src='http://bahuka.com/home/images/user-circle.png'></div></div>";
 }
 else{
- tt= "<div class='profess_dtl_prf'><p>"+textreslts+"</p><p>"+majorreslts+"</p><p>"+userfrom+"</p></div>";
+tt= "<div class='profess_dtl_prf'><p>"+textreslts+"</p><p>"+majorreslts+"</p><p>"+userfrom+"</p></div>";
 }
 
 if(profilelike>0){
 
-var span="<span  onclick='profilelikess("+userid+","+puserid+",this);' class='profilelike'>Liked</span>";
+var span1="<img src='img/fb-new.png'  id='Liked' style='opacity:1' onclick='profilelikess("+userid+","+puserid+",this);'>";
 }
 else{
 
- span="<span  onclick='profilelikess("+userid+","+puserid+",this);'  class='profilelike'>Like</span>";
+ span1="<img src='img/fb-new.png'  id='Like' style='opacity:0.30'  onclick='profilelikess("+userid+","+puserid+",this);'>";
 }
-  first="<!--div class='proimg_top'><img id='pro_l_img' src='img/pro_l_img.png'><p id='return_top_txt'>Return To Results</p><img id='pro_r_img' src='img/tepro_r_img.png'></div--><div class='thr_prifile_page'><div class='thr_prifile_banner'><img src='"+covers+"'></div></div><div class='sin_pfl_dtl'><div class='best-match-page'><div class='best-match-pro'><div class=best-tchr-image><img src='"+img+"'></div></div><div class='best-match-text'><div class='chrt_sml'><div id='chartContainer_1s'></div></div></div></div><div class='bottom-colmk'><div class='Uer_profile_dtl'><div class='thr-nme-bestk'>"+username+"<br><span>"+st+", "+collegename+"</span></div></div></div></div><div class='aboutme_main_container'><div class='about_me_profile'><div class='about_center_div'><div class='about-top-part'><div class='about_dtl'><p class='about_txt bottm-line'><span class='about-div'>About Me</span><span class='imgspans'><img src='img/fblike.png'></span>"+span+"<span class='blue-like2'>"+like+"</span></p></div>"+tt+"</div><div class='email-bottom-part'><div class='about_email'><p id='top_line'></p><p class='about_emaildtl'><img src='img/emailltr.png'> "+useremail+"</p></div></div></div></div></div><div class='profil-group-div'><div class='group_dtl'><p class='group-text'>Class Groups</p></div><div id='student-clases-groups' class='student-clases-groups'></div>";
+
+if(puserid!=userid)
+{
+
+var data1="<div class='tab-main-score'><ul class='tab'><li><a href='javascript:void(0)' class='tablinks' onclick='openCity(event, "+'"about"'+")'>About</a></li></ul><div class='like-me'><div class='button-like'>"+like+"</div><div class=img-like>"+span1+"</div></div></div>";
+
+}
+
+else{
+
+
+
+var data1="<div class='tab-main-score'><ul class='tab'><li><a href='javascript:void(0)' class='tablinks' onclick='openCity(event,"+'"reports"'+")'>Reports</a></li><li><a href='javascript:void(0)' class='tablinks' onclick='openCity(event, "+'"about"'+")'>About</a></li></ul><div class='like-me'><div class='button-like'>"+like+"</div><div class=img-like>"+span1+"</div></div></div>";
+}
+
+
+
+
+ first="<!--div class='proimg_top'><img id='pro_l_img' src='img/pro_l_img.png'><p id='return_top_txt'>Return To Results</p><img id='pro_r_img' src='img/tepro_r_img.png'></div--><div class='thr_prifile_page'><div class='thr_prifile_banner'><img src='"+covers+"'></div></div><div class='sin_pfl_dtl'><div class='best-match-page'><div class='best-match-pro'><div class=best-tchr-image><img src='"+img+"'></div></div><div class='best-match-text'><div class='chrt_sml'><div id='chartContainer_1s'></div></div></div></div></div><div class='bottom-colmk'><div class='Uer_profile_dtl'><div class='thr-nme-bestk'><p>"+username+"</p><span>"+st+", "+collegename+"</span></div></div></div><div class='aboutme_main_container'><div class='about_me_profile'>"+data1+"<div class='about_center_div tabcontent' id='about' style='display:block;'><div class='about-top-part'><div class='about_dtl'><p class='about_txt bottm-line'><span class='about-div'>About Me</span><!--span class='imgspans'><img src='img/fblike.png'></span><span class='blue-like2'>"+like+"</span--></p></div>"+tt+"</div><div class='email-bottom-part'><div class='about_email'><p id='top_line'></p><p class='about_emaildtl'><img src='img/emailltr.png'> "+useremail+"</p></div></div></div><div id='reports' class='tabcontent'></div></div></div></div></div></div></div><div class='profil-group-div'><div class='group_dtl'><p class='group-text'>Class Groups</p></div><div id='student-clases-groups' class='student-clases-groups'></div>";
 
   jQuery("#student-class-group-pge").append(first);
 
@@ -3096,7 +3146,7 @@ else{
     });
     chart.render(); 
 
-    
+    //ratings(userid);
     getgroups1(userid);
 
     jQuery(".search-post-append").after("<div class='backa6' onclick='getgroupwall("+groupid+");'>Back</div>");
@@ -3762,7 +3812,7 @@ img=imgd;
 
 if(profilestatus)
 {
-  rasrc1="<div class='pri-src-page'><div class='prifile-src-img'><img src='"+img+"'></div><div class='profile-src-name'>"+namepro+" <br /><span style='color:#605e5e;'> student,"+college+"</span></div></div><div class='tab-main-score'><ul class='tab'><li><a href='javascript:void(0)' class='tablinks' onclick='openCity(event,"+'"load-score"'+")'>Learning Scores</a></li><li><a href='javascript:void(0)' class='tablinks' onclick='openCity(event, "+'"ratings"'+")' >Ratings</a></li><li><a href='javascript:void(0)' class='tablinks' onclick='openCity(event,"+'"questions"'+")'>Questions</a></li></ul></div><div class='load-score'></div>";
+  rasrc1="<div class='pri-src-page'><div class='prifile-src-img'><img src='"+img+"'></div><div class='profile-src-name'>"+namepro+" <br /><span style='color:#605e5e;'> student,"+college+"</span></div></div><div class='tab-main-score'><ul class='tab'><li><a href='javascript:void(0)' class='tablinks' onclick='openCity(event,"+'"load-score"'+")'>Learning Scores</a></li><li><a href='javascript:void(0)' class='tablinks' onclick='openCity(event, "+'"ratings"'+")' >Ratings</a></li><li><!--a href='javascript:void(0)' class='tablinks' onclick='openCity(event,"+'"questions"'+")'>Questions</a--></li></ul></div><div class='load-score'></div>";
  }
  else
  {
@@ -5797,7 +5847,7 @@ else{
 }
 
 
-  first="<!--div class='proimg_top'><img id='pro_l_img' src='img/pro_l_img.png'><p id='return_top_txt'>Return To Results</p><img id='pro_r_img' src='img/tepro_r_img.png'></div--><div class='thr_prifile_page'><div class='thr_prifile_banner'><img src='"+covers+"'></div></div><div class='sin_pfl_dtl'><div class='best-match-page'><div class='best-match-pro'><div class=best-tchr-image><img src='"+img+"'></div></div><div class='best-match-text'><div class='chrt_sml'><div id='chartContainer_1s'></div></div></div></div><div class='bottom-colmk'><div class='Uer_profile_dtl'><div class='thr-nme-bestk'>"+username+"<br><span>"+st+", "+collegename+"</span></div></div></div></div><div class='aboutme_main_container'><div class='about_me_profile'><div class='about_center_div'><div class='about-top-part'><div class='about_dtl'><p class='about_txt bottm-line'><span class='about-div'>About Me</span><span class='imgspans'><img src='img/fblike.png'></span>"+span+"<span class='blue-like2'>"+like+"</span></p></div>"+tt+"</div><div class='email-bottom-part'><div class='about_email'><p id='top_line'></p><p class='about_emaildtl'><img src='img/emailltr.png'> "+useremail+"</p></div></div></div></div></div><div class='profil-group-div'><div class='group_dtl'><p class='group-text'>Class Groups</p></div><div id='student-clases-groups' class='student-clases-groups'></div>";
+  first="<!--div class='proimg_top'><img id='pro_l_img' src='img/pro_l_img.png'><p id='return_top_txt'>Return To Results</p><img id='pro_r_img' src='img/tepro_r_img.png'></div--><div class='thr_prifile_page'><div class='thr_prifile_banner'><img src='"+covers+"'></div></div><div class='sin_pfl_dtl'><div class='best-match-page'><div class='best-match-pro'><div class=best-tchr-image><img src='"+img+"'></div></div><div class='best-match-text'><div class='chrt_sml'><div id='chartContainer_1s'></div></div></div></div></div><div class='bottom-colmk'><div class='Uer_profile_dtl'><div class='thr-nme-bestk'><p>"+username+"</p><span>"+st+", "+collegename+"</span></div></div></div><div class='aboutme_main_container'><div class='about_me_profile'><div class='about_center_div'><div class='about-top-part'><div class='about_dtl'><p class='about_txt bottm-line'><span class='about-div'>About Me</span><span class='imgspans'><img src='img/fblike.png'></span>"+span+"<span class='blue-like2'>"+like+"</span></p></div>"+tt+"</div><div class='email-bottom-part'><div class='about_email'><p id='top_line'></p><p class='about_emaildtl'><img src='img/emailltr.png'> "+useremail+"</p></div></div></div></div></div><div class='profil-group-div'><div class='group_dtl'><p class='group-text'>Class Groups</p></div><div id='student-clases-groups' class='student-clases-groups'></div>";
 
   jQuery("#student-class-pge").append(first);
 
@@ -5969,7 +6019,7 @@ function notifications(){
    // dataType:"json",
     success: function(groupresponse) {
      
-
+jQuery("#divLoading").removeClass('show');
 
 
 
@@ -6041,7 +6091,7 @@ function notifications(){
           else if(cmd_type == 'notif_profile_like')
       {
              if(actor!=null){
-          notificationdiv += "<div  class='notification_center'  style='font-weight:bold;cursor:pointer;' onclick='viewprfl3("+userids+");'><ul class='notific_lists'><li><div class=list_notific_details><div  class='notification_text'><h1><span id='notic_nmber' style='font-weight:bold;cursor:pointer;' onclick='viewprfl1("+userid+");'> "+actor+ "</span>  liked your <span style='font-weight:bold;cursor:pointer;' onclick='viewprfl1("+userids+");'>profile</span></h1><p> "+time+" </p> </div></div></li></ul></div>";
+          notificationdiv += "<div  class='notification_center'  style='font-weight:bold;cursor:pointer;' onclick='viewprfl1new("+userids+");'><ul class='notific_lists'><li><div class=list_notific_details><div  class='notification_text'><h1><span id='notic_nmber' style='font-weight:bold;cursor:pointer;'> "+actor+ "</span>  liked your <span style='font-weight:bold;cursor:pointer;' onclick='viewprfl1new("+userids+");'>profile</span></h1><p> "+time+" </p> </div></div></li></ul></div>";
         }
       }
 
@@ -6092,7 +6142,7 @@ else{
   
 }
 
-/*window.setInterval(function () {
+window.setInterval(function () {
     countnoti();
 },  1000);
 
@@ -6108,75 +6158,25 @@ var countnoti = function() {
         data: formData,
         dataType:"json",
         success: function(response) 
-        {              
+        {      
+         if(response.totalnoti != 0){           
+
+          //jQuery(".sidebar_main_div .notinum.iconn-animated.flash ").html("j");
+
          // alert(response.totalnoti);
-            if(response.totalnoti != 0){           
-                var userdata = "<p><a href='notifications.html' data-hint='NOTIFICATIONS' class='ic-btn hint--left '>Notifications</a><img src='img/notification.png' /><span class='notinum iconn-animated  flash'>" + response.totalnoti + "</span><p>";
+           /* if(response.totalnoti != 0){           
+             var userdata = "<p><a href='notifications.html' data-hint='NOTIFICATIONS' class='ic-btn hint--left '>Notifications</a><img src='img/notification.png' /><span class='notinum iconn-animated  flash'>" + response.totalnoti + "</span><p>";
             }
             else {
                 var userdata = "<p><a href='notifications.html' data-hint='NOTIFICATIONS' class='ic-btn hint--left '>Notifications</a><img src='img/notification.png'/><span class='notinum iconn-animated  flash'></span><p>";
+            }*/
+            jQuery(".sidebar_main_div .notinum.iconn-animated.flash ").html(response.totalnoti);
             }
-            jQuery(".sidebar_main_div #shownotidiv").html(userdata);
         }
+        
     });
 }
 
-*/
-/*function notificationcount(){
-
-
-var task = "notificationcount";
- var  userid = localStorage.getItem('loginurid');
-
-  var formData = {
-   task: task,
-   notiuserid: userid, 
-  }; 
-  jQuery.ajax({
-    type: "post",
-    url: "http://bahuka.com/home/index.php?option=com_content&view=appcode",
-    data: formData,   
-    success: function(groupresponse) {
-     
-       
-
-
-
-
-    },
-    error: function () { 
-      //alert("Error");
-    }
-  }); 
-
-
-}*/
-
-
-/*
-window.setInterval(function () {
-    countpush();
-},  1000);
-
-var countpush = function() {
-    var logincsstid = localStorage.getItem('loginurid');
-    var formData = {
-        task: "countpush",
-        logincsstid : logincsstid
-    }; 
-    jQuery.ajax({
-        type: "POST",
-        url: "http://bahuka.com/home/index.php?option=com_content&view=appcode",
-        data: formData,
-        dataType:"json",
-        success: function(response) 
-        {              
-         // alert(response.totalnoti);
-         
-        }
-    });
-}
-*/
 
 
 
@@ -6869,9 +6869,9 @@ useridpr:   useridpr,
 
       //jQuery("#main-content #sidebar .sidebar_main_div .sidebar_profile").html('');
 
-        setTimeout(function(){  
+        
         jQuery("#main-content #sidebar .sidebar_main_div .sidebar_profile").append(sidebarfirst);
-        },50);
+      
     },
     error: function () 
     { 
@@ -7810,6 +7810,8 @@ jQuery('#showmore'+contentid).hide();
  $(document).on("click", "a#hashtag" , function() {
 jQuery('.back,.back13').hide();
 
+jQuery('.activity').hide();
+
 var text=jQuery(this).text();
            // alert(text);
 var className = $('a#hashtag').attr('class');
@@ -8448,9 +8450,12 @@ jQuery('.grouplike').text('Like');
 function profilelikess(id,puserid,aa){
 
 var  userid = localStorage.getItem('loginurid');
+var currentId = jQuery(aa).attr('id');
 
-var currentIdsss = $(aa).attr('class');
-var currentId = $(aa).text();
+
+
+//var currentIdsss = $(aa).attr('class');
+//var currentId = $(aa).text();
 
 
 var task ='showprofilelike';
@@ -8477,14 +8482,18 @@ var objsplike = jQuery.parseJSON( responseprz );
 //alert(likeme);
 if(likeme=='1'){
 
-jQuery('.blue-like2').html(countlikes);
+jQuery('.button-like').html(countlikes);
+jQuery("#"+currentId).css("opacity","1");
+jQuery("#Like").attr('id','Liked');
 
-jQuery('.profilelike').text('Liked');
 }
 else{
 
-jQuery('.blue-like2').html(countlikes);
-jQuery('.profilelike').text('Like');
+jQuery('.button-like').html(countlikes);
+jQuery("#"+currentId).css("opacity","0.30");
+//jQuery('.profilelike').text('Like');
+jQuery("#Liked").attr('id','Like');
+
 
 }
 
@@ -8651,14 +8660,14 @@ like=objsp.like;
  
   //alert(collabcclz); 
   //alert(clzyres);
-   if(clzyres || textreslts || majorreslts || clznme)
+  /* if(clzyres || textreslts || majorreslts || clznme)
   { }
   else
   {clzyres  = "" ;
    textreslts  = "";
     majorreslts  = "";
     clznme= "";
-  } 
+  } */
   if(cityreslts && statereslts && countryreslts ){
 
 
@@ -8673,7 +8682,8 @@ like=objsp.like;
 if (textreslts==null||majorreslts==null||userfrom==null){
 
 
-  tt="";
+ 
+  tt="<div class='profess_dtl_prf'><div class='left-user-img'><img src='http://bahuka.com/home/images/crying-user.png'></div><div class='right-user'><img src='http://bahuka.com/home/images/user-circle.png'><img src='http://bahuka.com/home/images/user-circle.png'><img src='http://bahuka.com/home/images/user-circle.png'></div></div>";
 }
 else{
  tt= "<div class='profess_dtl_prf'><p>"+textreslts+"</p><p>"+majorreslts+"</p><p>"+userfrom+"</p></div>";
@@ -8687,7 +8697,18 @@ else{
 
  span="<span  onclick='profilelikess("+userid+","+puserid+",this);'  class='profilelike'>Like</span>";
 }
-  first="<!--div class='proimg_top'><img id='pro_l_img' src='img/pro_l_img.png'><p id='return_top_txt'>Return To Results</p><img id='pro_r_img' src='img/tepro_r_img.png'></div--><div class='thr_prifile_page'><div class='thr_prifile_banner'><img src='"+covers+"'></div></div><div class='sin_pfl_dtl'><div class='best-match-page'><div class='best-match-pro'><div class=best-tchr-image><img src='"+img+"'></div></div><div class='best-match-text'><div class='chrt_sml'><div id='chartContainer_1s'></div></div></div></div><div class='bottom-colmk'><div class='Uer_profile_dtl'><div class='thr-nme-bestk'>"+username+"<br><span>"+st+", "+collegename+"</span></div></div></div></div><div class='aboutme_main_container'><div class='about_me_profile'><div class='tab-main-score'><ul class='tab'><li><a href='javascript:void(0)' class='tablinks' onclick='openCity(event,"+'"reports"'+")'>Reports</a></li><li><a href='javascript:void(0)' class='tablinks' onclick='openCity(event, "+'"about"'+")'>About</a></li></ul><div class='like-me'><div class='button-like'>3</div><div class=img-like><img src='img/fb-new.png'></div></div></div><div class='about_center_div tabcontent' id='about' style='display:block;'><div class='about-top-part'><div class='about_dtl'><p class='about_txt bottm-line'><span class='about-div'>About Me</span><span class='imgspans'><img src='img/fblike.png'></span>"+span+"<span class='blue-like2'>"+like+"</span></p></div>"+tt+"</div><div class='email-bottom-part'><div class='about_email'><p id='top_line'></p><p class='about_emaildtl'><img src='img/emailltr.png'> "+useremail+"</p></div></div></div><div id='reports' class='tabcontent'></div></div></div></div></div></div></div><div class='profil-group-div'><div class='group_dtl'><p class='group-text'>Class Groups</p></div><div id='student-clases-groups' class='student-clases-groups'></div>";
+
+
+if(profilelike>0){
+
+var span1="<img src='img/fb-new.png'  id='Liked' style='opacity:1' onclick='profilelikess("+userid+","+puserid+",this);'>";
+}
+else{
+
+ span1="<img src='img/fb-new.png'  id='Like' style='opacity:0.30'  onclick='profilelikess("+userid+","+puserid+",this);'>";
+}
+
+  first="<!--div class='proimg_top'><img id='pro_l_img' src='img/pro_l_img.png'><p id='return_top_txt'>Return To Results</p><img id='pro_r_img' src='img/tepro_r_img.png'></div--><div class='thr_prifile_page'><div class='thr_prifile_banner'><img src='"+covers+"'></div></div><div class='sin_pfl_dtl'><div class='best-match-page'><div class='best-match-pro'><div class=best-tchr-image><img src='"+img+"'></div></div><div class='best-match-text'><div class='chrt_sml'><div id='chartContainer_1s'></div></div></div></div></div><div class='bottom-colmk'><div class='Uer_profile_dtl'><div class='thr-nme-bestk'><p>"+username+"</p><span>"+st+", "+collegename+"</span></div></div></div><div class='aboutme_main_container'><div class='about_me_profile'><div class='tab-main-score'><ul class='tab'><li><a href='javascript:void(0)' class='tablinks' onclick='openCity(event,"+'"reports"'+")'>Reports</a></li><li><a href='javascript:void(0)' class='tablinks' onclick='openCity(event, "+'"about"'+")'>About</a></li></ul><div class='like-me'><div class='button-like'>"+like+"</div><div class=img-like>"+span1+"</div></div></div><div class='about_center_div tabcontent' id='about' style='display:block;'><div class='about-top-part'><div class='about_dtl'><p class='about_txt bottm-line'><span class='about-div'>About Me</span><!--span class='imgspans'><img src='img/fblike.png'></span>"+span+"<span class='blue-like2'>"+like+"</span--></p></div>"+tt+"</div><div class='email-bottom-part'><div class='about_email'><p id='top_line'></p><p class='about_emaildtl'><img src='img/emailltr.png'> "+useremail+"</p></div></div></div><div id='reports' class='tabcontent'></div></div></div></div></div></div></div><div class='profil-group-div'><div class='group_dtl'><p class='group-text'>Class Groups</p></div><div id='student-clases-groups' class='student-clases-groups'></div>";
 
   jQuery("#student-class-group-pge").append(first);
 
@@ -8759,9 +8780,11 @@ function openCity(evt, cityName) {
     evt.currentTarget.className += " active";
 }
 
-function ratings()
+function ratings(newuser)
 {
+
 userid= localStorage.getItem('loginurid');
+
 /*  ajax hit question save value */
 var task ='viewrating';
 var useridpr = userid;
@@ -8777,13 +8800,26 @@ useridpr:   useridpr
 
   jQuery.ajax({
     type: "post",
-    url: "http://bahuka.com/home/dev/index.php?option=com_content&view=appcode",
+    url: "http://bahuka.com/home/index.php?option=com_content&view=appcode",
     data: formData,
    
 
     success: function(responseprz) 
     {
    
+
+if(responseprz=="")
+
+
+
+{
+
+var appendataa="<p class='no-class'>You have not any class.</p>";
+
+jQuery("#reports").append(appendataa);
+}
+
+else{
     var obj = jQuery.parseJSON( responseprz );
 
 //for()
@@ -8797,7 +8833,7 @@ for(key in obj) {
 
 len = arr.length;
 
-console.log(len) //2*/
+//alert(len); //2*/
  //divdata="";
 //  jQuery('#student-clases-added').html('');
   var p=1;
@@ -8813,10 +8849,50 @@ var getstringify = JSON.stringify(obj[i]);
 var objs = jQuery.parseJSON( getstringify );
 var classname = objs.classname;
 var startdate = objs.startdate;
-var feedbacrating = objs.feedbackrating;
-var scid = objs.scid;
-text+="<p class='date-text"+i+"'  style='display:none;text-align:center;' >"+startdate+"</p>";
+if(startdate==null)
 
+{
+var d = new Date();
+startdate=(d.getMonth()+1)+'/'+d.getDate()+'/'+d.getFullYear();
+
+}
+
+
+
+var feedbacrating = objs.feedbackrating;
+//alert(feedbacrating);
+
+if(feedbacrating=="norating")
+
+{
+
+feedbacrating=0;
+
+
+}
+
+feedback=feedbacrating *10;
+
+
+var scid = objs.scid;
+
+
+
+if(i==1)
+
+{
+var style='style=display:block;text-align:center;';
+var classa='fff';
+}
+
+else{
+
+	var style='style=display:none;text-align:center;';
+	var classa='';
+}
+
+
+text+="<p class='date-text"+i+"'  "+style+" >"+startdate+"</p>";
 for(j=1;j<=5;j++)
 
 
@@ -8824,8 +8900,21 @@ for(j=1;j<=5;j++)
 if(j<=feedbacrating)
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
 {
-ing+="<div class='images-list'><img src=http://bahuka.com/home/images/brain-gold.png class='list-main"+i+"-"+j+"'  id='"+j+"' onclick='addRating(this,"+userid+","+i+");' style='opacity:1;'></div>";
+ing+="<div class='images-list'  ><img src=http://bahuka.com/home/images/brain-gold.png class='list-main"+i+"-"+j+"'  id='"+j+"' onclick='addRating(this,"+userid+","+i+");' style='opacity:1;'></div>";
 
 }
 
@@ -8837,7 +8926,10 @@ else
 
 }
 }
-classdata +="<div class='arrow-main' id='rating"+i+"' style='display:none;'><div class='imagew-arrow'><img src='img/arrow-1.png' onclick='prepagi("+i+")'></div><div class='text-arrow-img"+i+"'  id='"+scid+"' style='float: left;width: 56%;'>"+classname+"</div><div class='imagew-arrow'><img src='img/arrow-2.png' onclick='paging("+i+")'></div><div class='list-main' id='list-main"+i+"'>"+ing+"</div></div>";
+
+
+
+classdata +="<div class='arrow-main' id='rating"+i+"' "+style+" ><div class='imagew-arrow'><img src='img/arrow-1.png' onclick='prepagi("+i+")'></div><div class='text-arrow-img"+i+" "+classa+"'  id='"+scid+"' style='float: left;width: 56%;'>"+classname+"</div><div class='imagew-arrow'><img src='img/arrow-2.png' onclick='paging("+i+")'></div><div class='list-main' id='list-main"+i+"'>"+ing+"</div><div class='list-text  textarea' id='"+i+"-text'> <textarea  id='topics_discuss' name='topics_discuss' placeholder='What topics were discussed...'></textarea></div><div class='list-text'><span class='leftd'>Not Yet!</span><span class='right'>Got this!</span></div><div id='ratingLoading'></div><div class='submit-professor'><input value='RATE' type='submit'  onclick='classhedulelist("+userid+","+i+");'></div><div class='question-professsor'><div class='question-text'>Feedback Points</div><div class='question-picture'><img src='http://bahuka.com/home/images/trophy.png'></div><div class='feedback-points'><div class='text-feedback'>Feedback Points:</div><div class='zero"+i+"' style='color: white;'>"+feedback+"</div></div><div class='submit-question score-history '><a href='scorehistory.html'>Score History</a></div><div class='full-reports'>Check out your full Analytical Report</div></div></div>";
 classdata1 +="<div class='arrow-main' id='rating-white"+i+"' style='display:none;'><div class='imagew-arrow'><img src='img/arrow-white1.png' onclick='prepagi1("+i+")'></div><div class='text-arrow-whitw"+i+"'  id='"+scid+"' style='color: white;font-size: 20px;width: 54%;float: left;'>"+classname+"</div><div class='imagew-arrow'><img src='img/arrow-white2.png' onclick='paging1("+i+")'></div></div>";
 
 
@@ -8845,9 +8937,16 @@ classdata1 +="<div class='arrow-main' id='rating-white"+i+"' style='display:none
 
 
 
-  var appendata="<p class='coenfidence-list'>Confidence and Understanding</p><div class='small-text'>Only Professors & you can see ratings.</div>"+text+"<div class='arrow-main' id='rating-class'><div class='imagew-arrow'><img src='img/arrow-1.png'></div><div class='text-arrow'>Add Class</div><div class='imagew-arrow'><img src='img/arrow-2.png' onclick='paging(0)'></div></div>"+classdata+"<div class='list-text  textarea'> <textarea  id='topics_discuss' name='topics_discuss' placeholder='What topics were discussed...'></textarea></div><div class='list-text'><span class='leftd'>Not Yet!</span><span class='right'>Got this!</span></div><div id='ratingLoading'></div><div class='submit-professor'><input value='RATE' type='submit'  onclick='classhedulelist("+userid+");'></div><div class='question-professsor'><div class='question-text'>Questions for Professor</div><div class='question-picture'><img src='http://bahuka.com/home/images/question-ans.png'></div><div class='arrow-main' id='rating-white'><div class='imagew-arrow'><img src='img/arrow-white1.png'></div><div class='text-arrow'>Add Classes</div><div class='imagew-arrow'><img src='img/arrow-white2.png' onclick='paging1(0)'></div></div>"+classdata1+"<div class='list-text largetextarea'><textarea name='topics_discuss1' id='topics_discuss1' placeholder='Submit a question about the material covered today…'></textarea></div><div id='whiteLoading'></div><div class='submit-question'><input type='button'  name='submit' value='submit' onclick='submitquestion("+userid+")'></div><div class='absolute' style='display:none;'>Thanks ! your Question has been submitted</div></div><div class='trophy-class'><img src=http://bahuka.com/home/images/trophy.png></div><div class='feedback-points'><div class='text-feedback'>Feedback Points:<span>0</span></div><div class='submit-question score-history '><a href='scorehistory.html'>Score History</a></div><div class='full-reports'>Check out your full Analytical Report</div>";
+  //var appendata="<p class='coenfidence-list'>Confidence and Understanding</p><div class='small-text'>Only Professors & you can see ratings.</div>"+text+"<div class='arrow-main' id='rating-class'><div class='imagew-arrow'><img src='img/arrow-1.png'></div><div class='text-arrow'>Add Class</div><div class='imagew-arrow'><img src='img/arrow-2.png' onclick='paging(0)'></div></div>"+classdata+"<div class='list-text  textarea'> <textarea  id='topics_discuss' name='topics_discuss' placeholder='What topics were discussed...'></textarea></div><div class='list-text'><span class='leftd'>Not Yet!</span><span class='right'>Got this!</span></div><div id='ratingLoading'></div><div class='submit-professor'><input value='RATE' type='submit'  onclick='classhedulelist("+userid+");'></div><div class='question-professsor'><div class='question-text'>Questions for Professor</div><div class='question-picture'><img src='http://bahuka.com/home/images/question-ans.png'></div><div class='arrow-main' id='rating-white'><div class='imagew-arrow'><img src='img/arrow-white1.png'></div><div class='text-arrow'>Add Classes</div><div class='imagew-arrow'><img src='img/arrow-white2.png' onclick='paging1(0)'></div></div>"+classdata1+"<div class='list-text largetextarea'><textarea name='topics_discuss1' id='topics_discuss1' placeholder='Submit a question about the material covered today…'></textarea></div><div id='whiteLoading'></div><div class='submit-question'><input type='button'  name='submit' value='submit' onclick='submitquestion("+userid+")'></div><div class='absolute' style='display:none;'>Thanks ! your Question has been submitted</div></div><div class='trophy-class'><img src=http://bahuka.com/home/images/trophy.png></div><div class='feedback-points'><div class='text-feedback'>Feedback Points:<span>0</span></div><div class='submit-question score-history '><a href='scorehistory.html'>Score History</a></div><div class='full-reports'>Check out your full Analytical Report</div>";
+
+
+
+  var appendata="<p class='coenfidence-list'>Confidence and Understanding</p><div class='small-text'>Only Professors & you can see ratings.</div>"+text+classdata+"";
 
 jQuery("#reports").append(appendata);
+
+
+}
   },
 
 
@@ -8867,10 +8966,10 @@ jQuery("#reports").append(appendata);
 function paging(id)
 {
 
-jQuery(".text-arrow-img"+id).removeClass("fff");
+
 var newid=id+1;
 if (jQuery('div#rating'+newid).length) {
-
+jQuery(".text-arrow-img"+id).removeClass("fff");
 jQuery("#rating-class").hide();
 jQuery("#rating"+newid).show();
 jQuery(".text-arrow-img"+newid).addClass("fff");
@@ -8916,7 +9015,7 @@ class_id:arrowid
 
   jQuery.ajax({
     type: "post",
-    url: "http://bahuka.com/home/dev/index.php?option=com_content&view=appcode",
+    url: "http://bahuka.com/home/index.php?option=com_content&view=appcode",
     data: formData,
    
 
@@ -8942,10 +9041,10 @@ jQuery('#formLoading').removeClass('show');
 
                   var groupRslt = jQuery.parseJSON(getstringifygroup);
                   var question = groupRslt.question;
+                  var totalquestions = groupRslt.totalquestions;
+                  jQuery('.question-total > strong').html(totalquestions);
 
-
-
- var showChar = 50;
+                     var showChar = 50;
 
                 if(question.length > showChar) {
 
@@ -9055,20 +9154,22 @@ jQuery(".question_images2").show();*/
 function prepagi(id)
 
 {
-                  jQuery(".text-arrow-img"+id).removeClass("fff");
+                  
                   var newid=id-1;
 
 
                 if(newid==0){
 
-                jQuery("#rating"+id).hide();
-                jQuery("#rating-class").show();
+return false;
+
+                /*jQuery("#rating"+id).hide();
+                jQuery("#rating-class").show();*/
                 jQuery(".date-text"+id).hide();
                 }
                 else{
                 if (jQuery('div#rating'+newid).length) {
 
-
+jQuery(".text-arrow-img"+id).removeClass("fff");
                 jQuery(".text-arrow-img"+newid).addClass("fff");
                 jQuery("#rating-class").hide();
                 jQuery("#rating"+newid).show();
@@ -9097,6 +9198,8 @@ jQuery('.no-activity-'+scid).remove();
                             jQuery("#rating"+id).hide();
                             jQuery("#rating-class").show();
                             jQuery(".date-text"+id).hide();
+
+                            jQuery('.question-total > strong').html("0");
                             }
                             else{
                             if (jQuery('div#rating'+newid).length) {
@@ -9118,14 +9221,20 @@ jQuery('.no-activity-'+scid).remove();
 
                       jQuery.ajax({
                       type: "post",
-                      url: "http://bahuka.com/home/dev/index.php?option=com_content&view=appcode",
+                      url: "http://bahuka.com/home/index.php?option=com_content&view=appcode",
                       data: formData,
 
 
                       success: function(responseprz) 
                       {
- jQuery('#formLoading').removeClass('show');
-  var groupobj = jQuery.parseJSON(responseprz);
+                        jQuery('#formLoading').removeClass('show');
+
+
+
+
+
+
+                        var groupobj = jQuery.parseJSON(responseprz);
                   var garr = [], groupobj;
 
                   for(key in groupobj) {
@@ -9144,8 +9253,9 @@ jQuery('.no-activity-'+scid).remove();
                   var question = groupRslt.question;
 
                   var class_id=groupRslt.class_id;
-
-var showChar = 50;
+                         var totalquestions = groupRslt.totalquestions;
+                        jQuery('.question-total > strong').html(totalquestions);
+                  var showChar = 50;
 
                 if(question.length > showChar) {
 
@@ -9265,7 +9375,7 @@ if(hha=="http://bahuka.com/home/images/brain-black.png")
             };
             jQuery.ajax({
             type: "post",
-            url: "http://bahuka.com/home/dev/index.php?option=com_content&view=appcode",
+            url: "http://bahuka.com/home/index.php?option=com_content&view=appcode",
             data: formData,
             //  beforeSend: function () { jQuery.mobile.loading('show'); },
             success: function(response) {
@@ -9306,7 +9416,7 @@ if(hha=="http://bahuka.com/home/images/brain-gold.png")
             };
             jQuery.ajax({
             type: "post",
-            url: "http://bahuka.com/home/dev/index.php?option=com_content&view=appcode",
+            url: "http://bahuka.com/home/index.php?option=com_content&view=appcode",
             data: formData,
             //  beforeSend: function () { jQuery.mobile.loading('show'); },
             success: function(response) {
@@ -9322,7 +9432,7 @@ if(hha=="http://bahuka.com/home/images/brain-gold.png")
 
 }
 }
- function classhedulelist(userid){
+ function classhedulelist(userid,i){
 
 var classid=jQuery(".fff").attr("id");
 
@@ -9333,14 +9443,14 @@ if(classid==undefined)
 {
 
   jQuery(".fff").toggleClass("red");
-  alert("please select the class ");
+  alert("Please select the class ");
 
 }
 
 else if(topics=="")
 {
 
-  alert("please write the topics");
+  alert("Please write the topics");
   
 }
 
@@ -9361,12 +9471,15 @@ task="submitrate";
 
   jQuery.ajax({
     type: "post",
-    url: "http://bahuka.com/home/dev/index.php?option=com_content&view=appcode",
+    url: "http://bahuka.com/home/index.php?option=com_content&view=appcode",
     data: formData,
     //  beforeSend: function () { jQuery.mobile.loading('show'); },
     success: function(response) {
-    	jQuery('#ratingLoading').removeClass('show');
 
+
+var ten=response*10;
+    	jQuery('#ratingLoading').removeClass('show');
+ jQuery(".zero"+i).html(ten);
  jQuery("#topics_discuss").val("");
  alert("Thanks your rating has been submitted.");
     },
@@ -9411,7 +9524,7 @@ var formData = {
   };
 jQuery.ajax({
     type: "post",
-    url: "http://bahuka.com/home/dev/index.php?option=com_content&view=appcode",
+    url: "http://bahuka.com/home/index.php?option=com_content&view=appcode",
     data: formData,
     //  beforeSend: function () { jQuery.mobile.loading('show'); },
     success: function(response) {
@@ -9459,7 +9572,7 @@ var formData = {
   };
 jQuery.ajax({
     type: "post",
-    url: "http://bahuka.com/home/dev/index.php?option=com_content&view=appcode",
+    url: "http://bahuka.com/home/index.php?option=com_content&view=appcode",
     data: formData,
     //  beforeSend: function () { jQuery.mobile.loading('show'); },
     success: function(response) {
@@ -9594,7 +9707,7 @@ var classdata="";
 
 jQuery.ajax({
     type: "post",
-    url: "http://bahuka.com/home/dev/index.php?option=com_content&view=appcode",
+    url: "http://bahuka.com/home/index.php?option=com_content&view=appcode",
     data: formData,
 
 
@@ -9644,6 +9757,7 @@ else{
 
   var imgdata="<img src='img/arrow-2.png' onclick='pagingquest("+i+","+scid+")'>";
 }
+
 classdata +="<div class='arrow-main  main-"+scid+"' id='rating"+i+"' style='display:none;'><div class='imagew-arrow'><img src='img/arrow-1.png' onclick='prepagitest("+i+","+scid+")'></div><div class='text-arrow-img"+i+"'  id='"+scid+"' style='float: left;width: 56%;margin-bottom: 16px;'>"+classname+"</div><div class='imagew-arrow'>"+imgdata+"</div></div>";
 
 
@@ -9651,7 +9765,7 @@ classdata +="<div class='arrow-main  main-"+scid+"' id='rating"+i+"' style='disp
 
 
 
-var qa="<div class='question-aqnswer'>Q&A</div><div class='question-total'>Questions:<strong>82</strong></div><div class='arrow-main' id='rating-class'><div class='imagew-arrow'><img src='img/arrow-1.png'></div><div class='text-arrow'>Select Class</div><div class='imagew-arrow'><img src='img/arrow-2.png' onclick='pagingquest(0,0)'></div></div><div id='formLoading'></div>"+classdata+"";
+var qa="<div class='question-aqnswer'>Q&A</div><div class='question-total'>Questions:<strong>0</strong></div><div class='arrow-main' id='rating-class'><div class='imagew-arrow'><img src='img/arrow-1.png'></div><div class='text-arrow'>Select Class</div><div class='imagew-arrow'><img src='img/arrow-2.png' onclick='pagingquest(0,0)'></div></div><div id='formLoading'></div>"+classdata+"";
 jQuery("#questions").append(qa);
 
 
@@ -9706,4 +9820,14 @@ if(userid==null)
 window.location.href = "index.html";
 
 }
+
+
+
+
+
+
+
+
+
+
 }

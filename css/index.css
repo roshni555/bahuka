@@ -107,7 +107,7 @@ h1 {
 .arrow-main {
     margin: 0 auto;
     text-align: center;
-    width: 90%;
+    width: 100%;
 }
 .imagew-arrow {
     float: left;
@@ -260,12 +260,18 @@ width: 82%;
     text-decoration: none;
 }
 
-.full-reports {
+/*.full-reports {
     color: #b4b4b4;
     font-size: 12px;
     width: 100%;
+}*/
+.full-reports {
+    color: white;
+    font-size: 13px;
+    margin: 6px auto;
+    text-align: center;
+    width: 76%;
 }
-
 #student-score-pges ul {
     background-color: #ddd;
     float: none;
