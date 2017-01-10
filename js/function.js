@@ -4897,14 +4897,14 @@ else{
 if(nomember=="yes"){
 
 
-	var postthis="<div class='joms-postbox-input joms-inputbox'><textarea id='add_post' class='input input-status' name='add_post' placeholder='Ask a question,post resources start a # ,or post your notes....' rows='4' cols='31' onclick='myFunction();'></textarea><div class='pixform-left'><img  src='img/images.png'onclick ='getImage();'><div id='imageLoading'></div></div><div class='status' style='display:none;'>Image uploading successfully</div><div class='post-hidden'><input type='button' name='post' value='post' id='button-post'  onclick='addpost("+groupid+");' style='display:none;' ></div></div><div class='activity'  style='display:none;'><p>Join class and join  activity </p></div></div>";
+  var postthis="<div class='joms-postbox-input joms-inputbox'><textarea id='add_post' class='input input-status' name='add_post' placeholder='Ask a question,post resources start a # ,or post your notes....' rows='4' cols='31' onclick='myFunction();'></textarea><div class='pixform-left'><img  src='img/images.png'onclick ='getImage();'><div id='imageLoading'></div></div><div class='status' style='display:none;'>Image uploading successfully</div><div class='post-hidden'><input type='button' name='post' value='post' id='button-post'  onclick='addpost("+groupid+");' style='display:none;' ></div></div><div class='activity'  style='display:none;'><p>Join class and join  activity </p></div></div>";
 
 
 }
 
 else{
 
-	var postthis="<div class='joms-postbox-input joms-inputbox' style='display:none;'><textarea id='add_post' class='input input-status' name='add_post' placeholder='Ask a question,post resources start a # ,or post your notes....' rows='4' cols='31' onclick='myFunction();'></textarea><div class='pixform-left'><img  src='img/images.png'onclick ='getImage();'><div id='imageLoading'></div></div><div class='status' style='display:none;'>Image uploading successfully</div><div class='post-hidden'><input type='button' name='post' value='post' id='button-post'  onclick='addpost("+groupid+");' style='display:none;' ></div></div><div class='activity'><p>Join class to post activity </p></div></div>";
+  var postthis="<div class='joms-postbox-input joms-inputbox' style='display:none;'><textarea id='add_post' class='input input-status' name='add_post' placeholder='Ask a question,post resources start a # ,or post your notes....' rows='4' cols='31' onclick='myFunction();'></textarea><div class='pixform-left'><img  src='img/images.png'onclick ='getImage();'><div id='imageLoading'></div></div><div class='status' style='display:none;'>Image uploading successfully</div><div class='post-hidden'><input type='button' name='post' value='post' id='button-post'  onclick='addpost("+groupid+");' style='display:none;' ></div></div><div class='activity'><p>Join class to post activity </p></div></div>";
 
 
 }
@@ -6837,7 +6837,15 @@ task: task,
 useridpr:   useridpr,
  };
 
- jQuery("#main-content #sidebar .sidebar_main_div .sidebar_profile").html("");
+
+
+
+
+
+
+
+
+
   jQuery.ajax({
     type: "post",
     url: "http://bahuka.com/home/index.php?option=com_content&view=appcode",
@@ -6845,7 +6853,7 @@ useridpr:   useridpr,
     //  beforeSend: function () { jQuery.mobile.loading('show'); },
     success: function(responseprz) 
     {
-      
+      jQuery("#main-content #sidebar .sidebar_main_div .sidebar_profile").html("");
       //console.log(responseprz);
 
       var objsprofl = jQuery.parseJSON( responseprz );
@@ -6867,12 +6875,12 @@ useridpr:   useridpr,
 
       }
      
-      var sidebarfirst =  "<div class='user_image' id="+useridpr+"><div class='user_login_image'><a href='userprofilepge.html'><img src='"+img+"'/></a></div></div><div class='user_login_details'><span class='menu_username'><p>"+username+"</p> </span><span class='menu_useremail'><p> "+useremail+"</p> </span></div>";
+      var sidebarfirst =  "<div class='main-user-profl'><div class='user_image' id="+useridpr+"><div class='user_login_image'><a href='userprofilepge.html'><img src='"+img+"'/></a></div></div><div class='user_login_details'><span class='menu_username'><p>"+username+"</p> </span><span class='menu_useremail'><p> "+useremail+"</p> </span></div></div>";
 
       //jQuery("#main-content #sidebar .sidebar_main_div .sidebar_profile").html('');
 
         
-        jQuery("#main-content #sidebar .sidebar_main_div .sidebar_profile").append(sidebarfirst);
+       jQuery("#main-content #sidebar .sidebar_main_div .sidebar_profile").html(sidebarfirst);
       
     },
     error: function () 
@@ -8889,8 +8897,8 @@ var classa='fff';
 
 else{
 
-	var style='style=display:none;text-align:center;';
-	var classa='';
+  var style='style=display:none;text-align:center;';
+  var classa='';
 }
 
 
@@ -9480,7 +9488,7 @@ task="submitrate";
 
 
 var ten=response*10;
-    	jQuery('#ratingLoading').removeClass('show');
+      jQuery('#ratingLoading').removeClass('show');
  jQuery(".zero"+i).html(ten);
  jQuery("#topics_discuss").val("");
  alert("Thanks your rating has been submitted.");
